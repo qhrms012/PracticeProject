@@ -27,7 +27,8 @@ public class Player : MonoBehaviour
 
     public void OnMove(InputValue value)
     {
-        playerVector = value.Get<Vector3>();
+        Vector2 inputVector = value.Get<Vector2>();
+        playerVector = new Vector3(inputVector.x, 0, inputVector.y);  // y -> z·Î ¸ÅÇÎ
     }
 
     private void FixedUpdate()
