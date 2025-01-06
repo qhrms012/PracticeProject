@@ -36,4 +36,10 @@ public class Player : MonoBehaviour
         Vector3 move = playerVector.normalized * playerSpeed * Time.fixedDeltaTime;
         rb.MovePosition(rb.position + move);
     }
+
+    public void Attack()
+    {
+        Debug.Log("플레이어 공격");
+
+    }
 }
