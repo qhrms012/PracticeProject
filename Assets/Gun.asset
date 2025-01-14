@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36ab618c45cfe4c4eb6649b047a28517, type: 3}
   m_Name: Gun
   m_EditorClassIdentifier: 
-  weaponName: 
-  damage: 0
-  attackSpeed: 0
+  weaponName: Gun
+  damage: 10
+  attackSpeed: 5
   weaponIcon: {fileID: 0}
