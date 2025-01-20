@@ -154,4 +154,78 @@ public class Practice : MonoBehaviour
         int A = int.Parse(Console.ReadLine());
         Console.WriteLine((A % 4 == 0 && A % 100 != 0 || A % 400 == 0) ? "1" : "0");
     }
+
+    public void Practice14681()
+    {
+        string s = Console.ReadLine();
+        string t = Console.ReadLine();
+        int A = int.Parse(s);
+        int B = int.Parse(t);
+
+        if (A >= 0 && B >= 0)
+        {
+            Console.WriteLine("1");
+        }
+        else if (A >= 0 && B <= 0)
+        {
+            Console.WriteLine("4");
+        }
+        else if (A <= 0 && B >= 0)
+        {
+            Console.WriteLine("2");
+        }
+        else
+        {
+            Console.WriteLine("3");
+        }
+
+        // 삼항 연산자를 사용하여 조건문 간략화
+        Console.WriteLine(A > 0 ? (B > 0 ? 1 : 4) : (B > 0 ? 2 : 3));
+    }
+
+    public void Practice2884()
+    {
+        string[] s = Console.ReadLine().Split();
+
+        int H = int.Parse(s[0]);
+        int M = int.Parse(s[1]);
+
+        if (M < 45 && H == 0) // 시간 0시의 경우
+        {
+            H = 23;          // 전날 23시로 설정
+            M = M + 60 - 45; // 분 계산
+        }
+        else if (M < 45) // 다른 시간에서 분이 45보다 작은 경우
+        {
+            H = H - 1;
+            M = M + 60 - 45;
+        }
+        else // 분이 45 이상인 경우
+        {
+            M = M - 45;
+        }
+
+        Console.WriteLine($"{H} {M}");
+    }
+    public void Practice2525()
+    {
+        string[] s = Console.ReadLine().Split();
+        string t = Console.ReadLine();
+
+        int H = int.Parse(s[0]);
+        int M = int.Parse(s[1]);
+        int T = int.Parse(t);
+
+        // 추가된 시간을 더한 총 분 계산
+        int totalMinutes = M + T;
+
+        // 시간을 추가한 후의 값
+        H += totalMinutes / 60; // 총 시간의 몫
+        M = totalMinutes % 60;  // 남은 분 계산
+
+        // 24시간 이상일 경우 조정
+        H %= 24;
+
+        Console.WriteLine($"{H} {M}");
+    }
 }
