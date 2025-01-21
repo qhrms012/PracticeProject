@@ -228,4 +228,72 @@ public class Practice : MonoBehaviour
 
         Console.WriteLine($"{H} {M}");
     }
+
+    public void Practice2480()
+    {
+        string[] s = Console.ReadLine().Split();
+
+        int A = int.Parse(s[0]);
+        int B = int.Parse(s[1]);
+        int C = int.Parse(s[2]);
+
+        int T = 0;
+        int S = Math.Max(A, Math.Max(B, C)); // 최대값 구하기
+
+        if (A == B && B == C)
+        {
+            // 세 숫자가 모두 같은 경우
+            T = 10000 + (A * 1000);
+        }
+        else if (A == B || A == C)
+        {
+            // A가 B 또는 C와 같은 경우
+            T = 1000 + (A * 100);
+        }
+        else if (B == C)
+        {
+            // B와 C가 같은 경우
+            T = 1000 + (B * 100);
+        }
+        else
+        {
+            // 모두 다른 경우, 가장 큰 값
+            T = S * 100;
+        }
+
+        Console.WriteLine(T);
+    }
+
+    public void Practice2739()
+    {
+        string s = Console.ReadLine();
+
+        int A = int.Parse(s);
+        int B = 0;
+        for (int i = 1; i < 10; i++)
+        {
+            B = A * i;
+
+
+            Console.WriteLine($"{A} * {i} = " + B);
+        }
+    }
+
+    public void Practice10950()
+    {
+        // 테스트 케이스의 개수 입력받기
+        int T = int.Parse(Console.ReadLine());
+
+        for (int i = 0; i < T; i++) // T번 반복
+        {
+            string[] s = Console.ReadLine().Split();
+
+            int A = int.Parse(s[0]);
+            int B = int.Parse(s[1]);
+
+            // A + B 출력
+            Console.WriteLine(A + B);
+        }
+    }
 }
+
