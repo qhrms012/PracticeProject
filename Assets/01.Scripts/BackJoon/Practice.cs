@@ -295,5 +295,62 @@ public class Practice : MonoBehaviour
             Console.WriteLine(A + B);
         }
     }
+
+    public void Practice25304()
+    {
+        //총 금액
+        int A = int.Parse(Console.ReadLine());
+        // 테스트 케이스의 개수 입력받기
+        int T = int.Parse(Console.ReadLine());
+        int D = 0;
+        for (int i = 0; i < T; i++)
+        {
+
+            string[] s = Console.ReadLine().Split();
+            int B = int.Parse(s[0]);
+            int C = int.Parse(s[1]);
+
+            D += B * C;
+        }
+
+        if (D == A)
+        {
+            Console.WriteLine("Yes");
+        }
+        else
+        {
+            Console.WriteLine("No");
+        }
+    }
+
+    public void Practice8393()
+    {
+        // 테스트 케이스의 개수 입력받기
+        int T = int.Parse(Console.ReadLine());
+
+        int D = 0;
+        int A = 0;
+        for (int i = 0; i < T; i++)
+        {
+            D++;
+            A += D;
+        }
+
+        Console.WriteLine(A);
+    }
+
+    public void Practice25314()
+    {
+        // 테스트 케이스의 개수 입력받기
+        int T = int.Parse(Console.ReadLine());
+        int A = T / 4;
+
+        for (int i = 0; i < A; i++)
+        {
+            Console.Write("long ");
+        }
+        Console.Write("int");
+
+    }
 }
 
