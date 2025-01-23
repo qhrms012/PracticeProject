@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -351,6 +352,53 @@ public class Practice : MonoBehaviour
         }
         Console.Write("int");
 
+    }
+
+    public void Practice15552()
+    {
+        StringBuilder sb = new StringBuilder();
+        // 테스트 케이스의 개수 입력받기
+        int T = int.Parse(Console.ReadLine());
+        for (int i = 0; i < T; i++)
+        {
+            string[] s = Console.ReadLine().Split();
+            sb.Append(int.Parse(s[0]) + int.Parse(s[1]) + "\n");
+        }
+        Console.WriteLine(sb.ToString());
+    }
+
+    public void Practice11021()
+    {
+        // 테스트 케이스의 개수 입력받기
+        int T = int.Parse(Console.ReadLine());
+        int D = 1;
+        for (int i = 0; i < T; i++)
+        {
+            string[] s = Console.ReadLine().Split();
+            int A = int.Parse(s[0]);
+            int B = int.Parse(s[1]);
+            int C = A + B;
+
+            Console.WriteLine($"Case #{D}: " + C);
+            D++;
+        }
+    }
+
+    public void Practice11022()
+    {
+        // 테스트 케이스의 개수 입력받기
+        int T = int.Parse(Console.ReadLine());
+        int C = 1;
+        for (int i = 0; i < T; i++)
+        {
+            string[] s = Console.ReadLine().Split();
+
+            int A = int.Parse(s[0]);
+            int B = int.Parse(s[1]);
+            int D = A + B;
+            Console.WriteLine($"Case #{C}: {A} + {B} = {D}");
+            C++;
+        }
     }
 }
 
