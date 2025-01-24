@@ -400,5 +400,64 @@ public class Practice : MonoBehaviour
             C++;
         }
     }
+
+    public void Practice2438()
+    {
+        // 테스트 케이스의 개수 입력받기
+        int T = int.Parse(Console.ReadLine());
+        string s = "*";
+        for (int i = 0; i < T; i++)
+        {
+            Console.WriteLine(s);
+            s += "*";
+        }
+
+        //// 테스트 케이스의 개수 입력받기
+        //int T = int.Parse(Console.ReadLine());
+
+        //for (int i = 1; i <= T; i++)
+        //{
+        //    Console.WriteLine(new string('*', i)); // '*'를 i개 생성
+        //}
+    }
+
+    public void Practice2439()
+    {
+        // 테스트 케이스의 개수 입력받기
+        int T = int.Parse(Console.ReadLine());
+        int J = T;
+        int K = 1;
+        for (int i = 1; i <= T; i++)
+        {
+            for (J = T; J > K; J--)
+            {
+                Console.Write(" ");
+            }
+            for (K = 1; K < i + 1; K++)
+            {
+                Console.Write("*");
+            }
+            Console.WriteLine();
+        }
+    }
+
+    public void Practice10952()
+    {
+        while (true)
+        {
+            string[] s = Console.ReadLine().Split();
+
+            int a = int.Parse(s[0]);
+            int b = int.Parse(s[1]);
+
+            int c = a + b;
+
+            if (a == 0 && b == 0)
+            {
+                break;
+            }
+            Console.WriteLine(c);
+        }
+    }
 }
 
