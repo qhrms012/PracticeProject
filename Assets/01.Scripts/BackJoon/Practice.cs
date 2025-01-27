@@ -459,5 +459,56 @@ public class Practice : MonoBehaviour
             Console.WriteLine(c);
         }
     }
+
+    public void Practice10951()
+    {
+        while (true)
+        {
+            string input = Console.ReadLine();
+            if (input == null) break; // 입력이 더 이상 없으면 반복문 종료
+
+            string[] s = input.Split();
+
+            int a = int.Parse(s[0]);
+            int b = int.Parse(s[1]);
+
+            Console.WriteLine(a + b);
+        }
+    }
+
+    public void Practice10807()
+    {
+        int t = int.Parse(Console.ReadLine());
+        string[] s = Console.ReadLine().Split();
+        string y = Console.ReadLine();
+        int a = 0;
+        for (int i = 0; i < t; i++)
+        {
+            if (s[i] == y)
+            {
+                ++a;
+            }
+        }
+        Console.WriteLine(a);
+    }
+
+    public void Practice10871()
+    {
+        int[] a = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+        int[] b = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+
+        List<int> d = new List<int>();
+
+        for (int i = 0; i < a[0]; i++)
+        {
+            if (b[i] < a[1])
+            {
+                d.Add(b[i]);
+            }
+        }
+
+        Console.WriteLine(string.Join(" ", d));
+    }
+
 }
 
