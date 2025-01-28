@@ -510,5 +510,78 @@ public class Practice : MonoBehaviour
         Console.WriteLine(string.Join(" ", d));
     }
 
+    public void Practice10818()
+    {
+        int a = int.Parse(Console.ReadLine());
+
+        int[] b = new int[a];
+
+        string[] s = Console.ReadLine().Split();
+        for (int i = 0; i < a; i++)
+        {
+            b[i] = int.Parse(s[i]);
+        }
+
+        Array.Sort(b);
+
+        Console.WriteLine($"{b[0]} {b[a - 1]}");
+    }
+
+    public void Practice2562()
+    {
+        int size = 9; // 배열 크기
+        int[] numbers = new int[size];
+
+        int maxValue = int.MinValue; // 현재 최대값
+        int maxIndex = 0;           // 최대값의 위치
+
+        for (int i = 0; i < size; i++)
+        {
+            // 입력값을 받아서 정수로 변환
+            int input = int.Parse(Console.ReadLine());
+            numbers[i] = input;
+
+            // 최대값과 위치 갱신
+            if (input > maxValue)
+            {
+                maxValue = input;
+                maxIndex = i + 1; // 1-based index 출력
+            }
+        }
+
+        // 결과 출력
+        Console.WriteLine(maxValue);
+        Console.WriteLine(maxIndex);
+    }
+
+    public void Practice10810()
+    {
+        // 첫 번째 입력: 배열 크기와 작업 수
+        int[] parameters = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+        int arraySize = parameters[0];
+        int operationCount = parameters[1];
+
+        // 결과를 저장할 배열 (초기값은 모두 0)
+        int[] result = new int[arraySize];
+
+        // 작업 수행
+        for (int i = 0; i < operationCount; i++)
+        {
+            // 입력: 시작, 끝, 값
+            int[] operation = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+            int start = operation[0];
+            int end = operation[1];
+            int value = operation[2];
+
+            // 범위에 값 할당
+            for (int j = start; j <= end; j++)
+            {
+                result[j - 1] = value; // 1-based index를 0-based로 변환
+            }
+        }
+
+        // 결과 출력
+        Console.WriteLine(string.Join(" ", result));
+    }
 }
 
