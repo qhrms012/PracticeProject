@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -582,6 +583,60 @@ public class Practice : MonoBehaviour
 
         // 결과 출력
         Console.WriteLine(string.Join(" ", result));
+    }
+
+    public void Practice10813()
+    {
+        int[] size = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+
+        int[] last = new int[size[0]];
+
+        for (int i = 0; i < size[0]; i++)
+        {
+            last[i] = i + 1;
+        }
+        for (int i = 0; i < size[1]; i++)
+        {
+            int[] input = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+            int num1 = input[0] - 1;
+            int num2 = input[1] - 1;
+
+
+            int num3 = last[num1];
+            last[num1] = last[num2];
+            last[num2] = num3;
+        }
+        Console.WriteLine(string.Join(" ", last));
+    }
+
+    public void Practice5597()
+    {
+        List<int> size = Enumerable.Range(1, 30).ToList(); // 1~30까지 리스트 생성
+
+        for (int i = 0; i < 28; i++) // 사용자 입력을 받아서 리스트에서 제거
+        {
+            int del = int.Parse(Console.ReadLine());
+            size.Remove(del); // 리스트에서 해당 숫자 제거
+        }
+
+        // 남은 숫자는 두 개 -> 정렬 후 출력
+        size.Sort();
+        Console.WriteLine($"{size[0]}");
+        Console.WriteLine($"{size[1]}");
+    }
+
+    public void Practice3052()
+    {
+        HashSet<int> remainders = new HashSet<int>(); // 중복을 허용하지 않는 HashSet
+
+        for (int i = 0; i < 10; i++)
+        {
+            int input = int.Parse(Console.ReadLine());
+            int temp = input % 42;
+            remainders.Add(temp); // HashSet에 추가 (중복 자동 제거)
+        }
+
+        Console.WriteLine(remainders.Count); // 서로 다른 나머지 개수 출력
     }
 }
 
