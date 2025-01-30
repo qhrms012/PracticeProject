@@ -638,5 +638,53 @@ public class Practice : MonoBehaviour
 
         Console.WriteLine(remainders.Count); // 서로 다른 나머지 개수 출력
     }
+
+    public void Practice10811()
+    {
+        int[] start = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+        int[] ints = new int[start[0]];
+
+        for (int i = 0; i < start[0]; i++)
+        {
+            ints[i] = i + 1;
+        }
+
+        for (int i = 0; i < start[1]; i++)
+        {
+            int[] input = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+            int starts = input[0] - 1;
+            int ends = input[1] - starts;
+
+            Array.Reverse(ints, starts, ends);
+
+        }
+        Console.Write(string.Join(" ", ints));
+    }
+
+    public void Practice1546()
+    {
+        int counts = int.Parse(Console.ReadLine());
+        float max = float.MinValue;
+        float[] score = Array.ConvertAll(Console.ReadLine().Split(), float.Parse);
+
+        for (int i = 0; i < counts; i++)
+        {
+            if (score[i] > max)
+            {
+                max = score[i];
+            }
+        }
+
+        float sum = 0.0f;
+        float average = 0.0f;
+        for (int i = 0; i < counts; i++)
+        {
+            score[i] = score[i] / max * 100;
+            sum += score[i];
+        }
+        average = sum / counts;
+        string sums = string.Format("{0:N2}", average);
+        Console.WriteLine(sums);
+    }
 }
 
