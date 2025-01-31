@@ -686,5 +686,38 @@ public class Practice : MonoBehaviour
         string sums = string.Format("{0:N2}", average);
         Console.WriteLine(sums);
     }
+    public void Practice27866()
+    {
+        string input = Console.ReadLine();
+
+        int count = int.Parse(Console.ReadLine());
+        //string output = input.Substring(count - 1, 1);
+
+        Console.WriteLine(input[count - 1]);
+    }
+
+    public void Practice2743()
+    {
+        string input = Console.ReadLine();
+        int count = 0;
+        for (int i = 0; i < input.Length; i++)
+        {
+            count++;
+        }
+        Console.WriteLine(count);
+    }
+
+    public void Practice9086()
+    {
+        int count = int.Parse(Console.ReadLine());
+
+        for (int i = 0; i < count; i++)
+        {
+            string input = Console.ReadLine();
+            char first = input.FirstOrDefault();
+            char last = input.LastOrDefault();
+            Console.WriteLine($"{first}{last}");
+        }
+    }
 }
 
