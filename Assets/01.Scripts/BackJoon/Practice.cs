@@ -719,5 +719,14 @@ public class Practice : MonoBehaviour
             Console.WriteLine($"{first}{last}");
         }
     }
+
+    public void Practice11654()
+    {
+        string s = Console.ReadLine();
+
+        char asc = s[0];
+        int asc_i = (int)asc;
+        Console.WriteLine(asc_i);
+    }
 }
 
