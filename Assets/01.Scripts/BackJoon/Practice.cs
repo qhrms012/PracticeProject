@@ -728,5 +728,19 @@ public class Practice : MonoBehaviour
         int asc_i = (int)asc;
         Console.WriteLine(asc_i);
     }
+
+    public void Practice11720()
+    {
+        int input = int.Parse(Console.ReadLine());
+        string number = Console.ReadLine();
+
+        int sum = 0;
+
+        for (int i = 0; i < input; i++)
+        {
+            sum += int.Parse(number[i].ToString());
+        }
+        Console.WriteLine(sum);
+    }
 }
 
