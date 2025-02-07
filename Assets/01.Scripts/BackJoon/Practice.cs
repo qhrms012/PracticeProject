@@ -742,5 +742,50 @@ public class Practice : MonoBehaviour
         }
         Console.WriteLine(sum);
     }
+    public void Practice10809()
+    {
+        string input = Console.ReadLine();
+        int[] positions = new int[26];
+
+        // 배열을 -1로 초기화
+        for (int i = 0; i < 26; i++)
+        {
+            positions[i] = -1;
+        }
+
+        // 문자열 순회하면서 알파벳 위치 저장
+        for (int i = 0; i < input.Length; i++)
+        {
+            int index = input[i] - 'a'; // 'a'를 기준으로 인덱스 계산
+            if (positions[index] == -1) // 처음 등장한 경우에만 저장
+            {
+                positions[index] = i;
+            }
+        }
+
+        // 결과 출력
+        Console.WriteLine(string.Join(" ", positions));
+    }
+
+    public void Practice2675()
+    {
+        int input = int.Parse(Console.ReadLine());
+
+        for (int i = 0; i < input; i++)
+        {
+            string[] s = Console.ReadLine().Split();
+            int repeatCount = int.Parse(s[0]); // 반복 횟수 R
+            string str = s[1]; // 문자열 S
+
+            string result = "";
+
+            foreach (char c in str)
+            {
+                result += new string(c, repeatCount); // 문자를 repeatCount 만큼 반복
+            }
+
+            Console.WriteLine(result);
+        }
+    }
 }
 
