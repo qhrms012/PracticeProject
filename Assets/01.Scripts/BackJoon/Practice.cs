@@ -793,5 +793,34 @@ public class Practice : MonoBehaviour
         string[] input = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
         Console.WriteLine(input.Length);
     }
+
+    public void Practice2908()
+    {
+        string[] input = Console.ReadLine().Split();
+
+        char[] chars = input[0].ToCharArray();
+        char[] chars1 = input[1].ToCharArray();
+
+        Array.Reverse(chars);
+        Array.Reverse(chars1);
+
+        int a = 0;
+        int b = 0;
+        int c = 0;
+
+        a = int.Parse(chars);
+        b = int.Parse(chars1);
+
+
+        if (a < b)
+        {
+            c = b;
+        }
+        else
+        {
+            c = a;
+        }
+        Console.WriteLine(c);
+    }
 }
 
