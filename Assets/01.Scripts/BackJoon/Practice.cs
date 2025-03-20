@@ -787,5 +787,11 @@ public class Practice : MonoBehaviour
             Console.WriteLine(result);
         }
     }
+
+    public void Practice1152()
+    {
+        string[] input = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+        Console.WriteLine(input.Length);
+    }
 }
 
