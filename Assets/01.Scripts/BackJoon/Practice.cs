@@ -822,5 +822,24 @@ public class Practice : MonoBehaviour
         }
         Console.WriteLine(c);
     }
+    public void Practice5622()
+    {
+        string input = Console.ReadLine();
+        int totalTime = 0;
+
+        foreach (char c in input)
+        {
+            if ("ABC".Contains(c)) totalTime += 3;
+            else if ("DEF".Contains(c)) totalTime += 4;
+            else if ("GHI".Contains(c)) totalTime += 5;
+            else if ("JKL".Contains(c)) totalTime += 6;
+            else if ("MNO".Contains(c)) totalTime += 7;
+            else if ("PQRS".Contains(c)) totalTime += 8;
+            else if ("TUV".Contains(c)) totalTime += 9;
+            else if ("WXYZ".Contains(c)) totalTime += 10;
+        }
+
+        Console.WriteLine(totalTime);
+    }
 }
 
