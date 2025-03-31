@@ -3,7 +3,28 @@ using UnityEngine;
 public class ItemPickup : MonoBehaviour
 {
     public ItemData itemData; // 아이템 데이터 연결
+    private ItemTooltip tooltip; // 툴팁 참조
 
+    private void Start()
+    {
+        tooltip = FindObjectOfType<ItemTooltip>();
+    }
+
+    private void OnMouseEnter()
+    {
+        if (tooltip != null)
+        {
+            tooltip.ShowTooltip(itemData.itemDescription);
+        }
+    }
+
+    private void OnMouseExit()
+    {
+        if (tooltip != null)
+        {
+            tooltip.HideTooltip();
+        }
+    }
     private void OnMouseDown()
     {
         Inventory inventory = FindObjectOfType<Inventory>(); // 씬에서 인벤토리 찾기
