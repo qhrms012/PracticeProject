@@ -9,6 +9,8 @@ public class Inventory : MonoBehaviour
     {
         items.Add(item);
         Debug.Log(item.itemName + " 추가됨!");
+        // UI 업데이트
+        FindObjectOfType<InventoryUI>().UpdateInventoryUI();
     }
 
     public void RemoveItem(ItemData item)
