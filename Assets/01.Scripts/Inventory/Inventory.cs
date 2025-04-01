@@ -4,13 +4,17 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public List<ItemData> items = new List<ItemData>();
-
+    private void Start()
+    {
+        FindObjectOfType<InventoryUI>().UpdateInventoryUI();
+    }
     public void AddItem(ItemData item)
     {
         items.Add(item);
         Debug.Log(item.itemName + " 추가됨!");
         // UI 업데이트
-        FindObjectOfType<InventoryUI>().UpdateInventoryUI();
+        //
+        FindObjectOfType<InventoryUI>().CreateInventorySlot(item);
     }
 
     public void RemoveItem(ItemData item)

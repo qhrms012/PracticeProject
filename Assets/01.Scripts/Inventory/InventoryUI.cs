@@ -28,4 +28,15 @@ public class InventoryUI : MonoBehaviour
             itemSlots.Add(slot);
         }
     }
+    public void CreateInventorySlot(ItemData item)
+    {
+        GameObject slot = Instantiate(itemSlotPrefab, itemParent);
+        slot.GetComponentInChildren<TextMeshProUGUI>().text = item.itemName;
+        slot.GetComponentInChildren<Image>().sprite = item.itemIcon;
+
+        // 버튼 추가 (버리기)
+        Button dropButton = slot.GetComponentInChildren<Button>();
+        dropButton.onClick.AddListener(() => FindObjectOfType<Inventory>().DropItem(item, new Vector3(0, 1, 0))); // 플레이어 앞에 버림
+    }
+
 }
