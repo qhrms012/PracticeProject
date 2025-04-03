@@ -1,15 +1,24 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityEngine.Networking;
+using System;
+
+[Serializable]
+public class CryptoData
+{
+    public float usd;
+}
+
+[Serializable]
+public class CryptoResponse
+{
+    public CryptoData bitcoin;
+}
 
 public class CryptoManager : MonoBehaviour
 {
-
     private string apiUrl = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd";
 
-    // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(CryptoPrice());
@@ -17,18 +26,21 @@ public class CryptoManager : MonoBehaviour
 
     IEnumerator CryptoPrice()
     {
-        using(UnityWebRequest request = UnityWebRequest.Get(apiUrl))
+        using (UnityWebRequest request = UnityWebRequest.Get(apiUrl))
         {
             yield return request.SendWebRequest();
 
-            if(request.result == UnityWebRequest.Result.Success)
+            if (request.result == UnityWebRequest.Result.Success)
             {
-                Debug.Log("BitCoin Price :" + request.downloadHandler.text);
+                string json = request.downloadHandler.text;
+                CryptoResponse response = JsonUtility.FromJson<CryptoResponse>(json);
+                Debug.Log("BitCoin Price: " + response.bitcoin.usd + " USD");
             }
             else
             {
-                Debug.LogError("에러 발생" + request.error);
+                Debug.LogError("에러 발생: " + request.error);
             }
         }
     }
 }
+
