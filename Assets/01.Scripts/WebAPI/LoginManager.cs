@@ -13,8 +13,8 @@ public class LoginManager : MonoBehaviour
     private void Awake()
     {
         PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder()
-            //.RequestIdToken()
-            //.RequestServerAuthCode(false) 
+            .RequestIdToken()
+            .RequestServerAuthCode(false) 
             .Build();
 
         PlayGamesPlatform.InitializeInstance(config);
