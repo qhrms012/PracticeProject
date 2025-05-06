@@ -884,6 +884,15 @@ public class Practice : MonoBehaviour
         Console.WriteLine(string.Join(" ", finish));
     }
 
+    public void Practice25083()
+    {
+        Console.WriteLine("         ,r'\"7");
+        Console.WriteLine("r`-_   ,'  ,/");
+        Console.WriteLine(" \\. \". L_r'");
+        Console.WriteLine("   `~\\/");
+        Console.WriteLine("      |");
+        Console.WriteLine("      |");
+    }
 
 
 }
