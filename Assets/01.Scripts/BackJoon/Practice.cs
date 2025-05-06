@@ -869,7 +869,20 @@ public class Practice : MonoBehaviour
     }
     
         
-    
+    public void Practice3003()
+    {
+        string[] input = Console.ReadLine().Split();
+
+        int[] chess = { 1, 1, 2, 2, 2, 8 };
+        int[] finish = new int[input.Length];
+
+        for (int i = 0; i < input.Length; i++)
+        {
+            finish[i] = chess[i] - int.Parse(input[i]);
+        }
+
+        Console.WriteLine(string.Join(" ", finish));
+    }
 
 
 
