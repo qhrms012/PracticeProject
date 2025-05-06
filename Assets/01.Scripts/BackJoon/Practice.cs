@@ -10,7 +10,7 @@ public class Practice : MonoBehaviour
 {
     private void Start()
     {
-        
+
     }
 
     public void Practice18108()
@@ -23,7 +23,7 @@ public class Practice : MonoBehaviour
     public void Practice10926()
     {
         string s = Console.ReadLine();
-        
+
         if (s.Length > 50)
         {
             s = s.Substring(0, 50);
@@ -90,7 +90,7 @@ public class Practice : MonoBehaviour
         Console.WriteLine("(  /  )");
         Console.WriteLine(" \\(__)|");
     }
-    public void Practice10172() 
+    public void Practice10172()
     {
         Console.WriteLine("|\\_/|");
         Console.WriteLine("|q p|   /}");
@@ -841,5 +841,37 @@ public class Practice : MonoBehaviour
 
         Console.WriteLine(totalTime);
     }
+
+    public void Practice11718()
+    {
+
+        string input;
+
+        while (true)
+        {
+
+            input = Console.ReadLine();
+
+            if (input == "")
+                break;
+
+        }
+
+        Console.WriteLine(input);
+        //시간초과
+
+        while (true)
+        {
+            input = Console.ReadLine();
+            if (string.IsNullOrEmpty(input) == true) break;
+            Console.WriteLine(input);
+        }
+    }
+    
+        
+    
+
+
+
 }
 
