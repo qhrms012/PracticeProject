@@ -910,6 +910,23 @@ public class Practice : MonoBehaviour
         }
     }
 
+    public void Practice10988()
+    {
+        string s = Console.ReadLine();
+        bool isPalindrome = true;
+
+        for (int i = 0; i < s.Length / 2; i++)
+        {
+            if (s[i] != s[s.Length - 1 - i])
+            {
+                isPalindrome = false;
+                break;
+            }
+        }
+
+        Console.WriteLine(isPalindrome ? 1 : 0);
+    }
+
 
 }
 
