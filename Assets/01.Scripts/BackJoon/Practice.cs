@@ -966,5 +966,18 @@ public class Practice : MonoBehaviour
             Console.WriteLine((char)(maxIndex + 'A'));
     }
 
+    public void Practice2941()
+    {
+        string input = Console.ReadLine();
+        string[] croatia = { "c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z=" };
+
+        foreach (string c in croatia)
+        {
+            input = input.Replace(c, "*");
+        }
+
+        Console.WriteLine(input.Length);
+
+    }
 }
 
