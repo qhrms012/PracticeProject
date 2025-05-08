@@ -927,6 +927,44 @@ public class Practice : MonoBehaviour
         Console.WriteLine(isPalindrome ? 1 : 0);
     }
 
+    public void Practice1157()
+    {
+        string input = Console.ReadLine().ToUpper();
+        int[] alpha = new int[26];
+
+        foreach (char c in input)
+        {
+            alpha[c - 'A']++;
+        }
+
+        // 최대 빈도 찾기
+        int max = 0;
+        int maxIndex = 0;
+        bool isDuplicate = false;
+
+        // 배열 탐색하면서 최대값과 중복 체크
+        for (int i = 0; i < 26; i++)
+        {
+            if (alpha[i] > max)
+            {
+                max = alpha[i];
+                maxIndex = i;
+                isDuplicate = false;
+            }
+            else if (alpha[i] == max)
+            {
+                isDuplicate = true;
+            }
+
+            // 비교, 최대값 갱신, 중복 여부 판단
+        }
+
+        // 결과 출력
+        if (isDuplicate)
+            Console.WriteLine("?");
+        else
+            Console.WriteLine((char)(maxIndex + 'A'));
+    }
 
 }
 
