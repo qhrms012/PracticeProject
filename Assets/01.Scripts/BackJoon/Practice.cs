@@ -979,5 +979,45 @@ public class Practice : MonoBehaviour
         Console.WriteLine(input.Length);
 
     }
+    public void Practice1316()
+    {
+        static void Main(string[] args)
+        {
+            int inputLength = int.Parse(Console.ReadLine());
+            int groupWordCount = 0;
+
+            for (int i = 0; i < inputLength; i++)
+            {
+                string input = Console.ReadLine();
+                if (IsGroupWord(input))
+                {
+                    groupWordCount++;
+                }
+            }
+
+            Console.WriteLine(groupWordCount);
+        }
+
+        static bool IsGroupWord(string word)
+        {
+            bool[] seen = new bool[26]; // 알파벳 사용 여부
+            char prev = '\0'; // 이전 문자
+
+            foreach (char c in word)
+            {
+                if (c != prev)
+                {
+                    if (seen[c - 'a']) // 이미 나왔던 문자가 떨어져서 다시 나옴
+                    {
+                        return false;
+                    }
+                    seen[c - 'a'] = true;
+                }
+                prev = c;
+            }
+
+            return true; // 그룹 단어임
+        }
+    }
 }
 
