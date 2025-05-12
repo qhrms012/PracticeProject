@@ -1065,5 +1065,53 @@ public class Practice : MonoBehaviour
             Console.WriteLine($"{average:F6}");
         }
     }
+    public void Practice25206Practice()
+    {
+        static void Main(string[] args)
+        {
+            Dictionary<string, double> payDict = new Dictionary<string, double>()
+            {
+                {"A+", 30},
+                {"A0", 25},
+                {"B+", 20},
+                {"B0", 15},
+                {"C+", 10},
+                {"C0", 5},
+                {"D+", 0},
+                {"D0", -5}, // +5%니까 -5로 처리
+                {"F", -10}  // +10%니까 -10
+            };
+
+            int inputLength = 3;
+            List<string[]> inputList = new List<string[]>();
+
+            for (int i = 0; i < inputLength; i++)
+            {
+                string[] input = Console.ReadLine().Split();
+                inputList.Add(input);
+            }
+
+            double baseFee = 100000;
+            double totalFee = 0;
+
+            foreach (var subject in inputList)
+            {
+                string subjectName = subject[0];
+                double credit = double.Parse(subject[1]);
+                string grade = subject[2];
+
+                if (grade == "P") continue;
+
+                double discountRate = payDict[grade];
+                double originalCost = credit * baseFee;
+                double discountAmount = originalCost * (discountRate / 100.0);
+                double finalCost = originalCost - discountAmount;
+
+                totalFee += finalCost;
+            }
+
+            Console.WriteLine($"{totalFee:F0}");
+        }
+    }
 }
 
