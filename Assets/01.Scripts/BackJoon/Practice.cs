@@ -1019,5 +1019,51 @@ public class Practice : MonoBehaviour
             return true; // 그룹 단어임
         }
     }
+    public void Practice25206()
+    {
+        static void Main(string[] args)
+        {
+            Dictionary<string, double> gradeDict = new Dictionary<string, double>()
+            {
+                {"A+", 4.5},
+                {"A0", 4.0},
+                {"B+", 3.5},
+                {"B0", 3.0},
+                {"C+", 2.5},
+                {"C0", 2.0},
+                {"D+", 1.5},
+                {"D0", 1.0},
+                {"F", 0.0}
+            };
+
+            int inputLength = 20;
+            List<string[]> inputList = new List<string[]>();
+
+            for (int i = 0; i < inputLength; i++)
+            {
+                string[] input = Console.ReadLine().Split(); // 과목, 학점, 등급
+                inputList.Add(input);
+            }
+
+            double totalScore = 0;
+            double totalCredit = 0;
+
+            foreach (var subject in inputList)
+            {
+                string subjectName = subject[0];
+                double credit = double.Parse(subject[1]);
+                string grade = subject[2];
+
+                if (grade == "P") continue;
+
+                double score = gradeDict[grade];
+                totalScore += credit * score;
+                totalCredit += credit;
+            }
+
+            double average = totalScore / totalCredit;
+            Console.WriteLine($"{average:F6}");
+        }
+    }
 }
 
