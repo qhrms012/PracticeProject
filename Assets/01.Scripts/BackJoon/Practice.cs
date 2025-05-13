@@ -1120,5 +1120,14 @@ public class Practice : MonoBehaviour
             Console.WriteLine(DateTime.Today.ToString("yyyy-MM-dd"));
         }
     }
+
+    public void Practice7287()
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("62");
+            Console.WriteLine("qhrms028");
+        }
+    }
 }
 
