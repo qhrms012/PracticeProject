@@ -1113,5 +1113,12 @@ public class Practice : MonoBehaviour
             Console.WriteLine($"{totalFee:F0}");
         }
     }
+    public void Practice10699()
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(DateTime.Today.ToString("yyyy-MM-dd"));
+        }
+    }
 }
 
