@@ -1150,5 +1150,23 @@ public class Practice : MonoBehaviour
             sb.AppendLine(i.ToString());
         Console.WriteLine(sb.ToString());
     }
+    public void Practice10872()
+    {
+        int input = int.Parse(Console.ReadLine());
+
+        int output = 1;
+        if (input != 0)
+        {
+            for (int i = input; i > 0; i--)
+            {
+                output *= i;
+            }
+        }
+        else
+        {
+            output = 1;
+        }
+        Console.WriteLine(output);
+    }
 }
 
