@@ -1129,5 +1129,16 @@ public class Practice : MonoBehaviour
             Console.WriteLine("qhrms028");
         }
     }
+
+    public void Practice2420()
+    {
+        string[] input = Console.ReadLine().Split();
+
+        long a = long.Parse(input[0]);
+        long b = long.Parse(input[1]);
+
+        long c = Math.Abs(a - b);
+        Console.Write(c);
+    }
 }
 
