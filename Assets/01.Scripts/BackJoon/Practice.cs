@@ -1140,5 +1140,15 @@ public class Practice : MonoBehaviour
         long c = Math.Abs(a - b);
         Console.Write(c);
     }
+
+    public void Practice2741()
+    {
+        int input = int.Parse(Console.ReadLine());
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = 1; i <= input; i++)
+            sb.AppendLine(i.ToString());
+        Console.WriteLine(sb.ToString());
+    }
 }
 
