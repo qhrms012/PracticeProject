@@ -1168,5 +1168,55 @@ public class Practice : MonoBehaviour
         }
         Console.WriteLine(output);
     }
+    public void Practice2738()
+    {
+        // N과 M 입력
+        var nm = Console.ReadLine().Split().Select(int.Parse).ToArray();
+        int N = nm[0], M = nm[1];
+
+        // 행렬 A와 B 입력
+        int[,] A = new int[N, M];
+        int[,] B = new int[N, M];
+        int[,] C = new int[N, M];  // 결과 행렬
+
+        // 행렬 A 입력
+        for (int i = 0; i < N; i++)
+        {
+            var row = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            for (int j = 0; j < M; j++)
+            {
+                A[i, j] = row[j];
+            }
+        }
+
+        // 행렬 B 입력
+        for (int i = 0; i < N; i++)
+        {
+            var row = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            for (int j = 0; j < M; j++)
+            {
+                B[i, j] = row[j];
+            }
+        }
+
+        // 행렬 A와 B 덧셈 결과 C 계산
+        for (int i = 0; i < N; i++)
+        {
+            for (int j = 0; j < M; j++)
+            {
+                C[i, j] = A[i, j] + B[i, j];
+            }
+        }
+
+        // 결과 출력
+        for (int i = 0; i < N; i++)
+        {
+            for (int j = 0; j < M; j++)
+            {
+                Console.Write(C[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
 }
 
