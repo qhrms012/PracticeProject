@@ -1218,5 +1218,17 @@ public class Practice : MonoBehaviour
             Console.WriteLine();
         }
     }
+    public void Practice2744()
+    {
+        var input = Console.ReadLine();
+        string output = string.Empty;
+
+        foreach (var c in input)
+        {
+            output += char.IsUpper(c) ? char.ToLower(c) : char.ToUpper(c);
+        }
+
+        Console.WriteLine(output);
+    }
 }
 
