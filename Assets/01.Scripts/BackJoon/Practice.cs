@@ -1262,5 +1262,18 @@ public class Practice : MonoBehaviour
         var input = Console.ReadLine().Split().Select(long.Parse).ToArray();
         Console.WriteLine((input[0] + input[1]) * (input[0] - input[1]));
     }
+    public void Practice2475()
+    {
+        var input = Console.ReadLine().Split().Select(int.Parse).ToArray();
+        int MOD = 10;
+        int sumOfSquares = 0;
+
+        foreach (var num in input)
+        {
+            sumOfSquares += num * num;
+        }
+
+        Console.WriteLine(sumOfSquares % MOD);
+    }
 }
 
