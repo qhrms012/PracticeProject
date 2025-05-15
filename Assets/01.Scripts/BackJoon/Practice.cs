@@ -1275,5 +1275,26 @@ public class Practice : MonoBehaviour
 
         Console.WriteLine(sumOfSquares % MOD);
     }
+
+    public void Practice31403()
+    {
+        int[] input = new int[3];
+        for (int i = 0; i < input.Length; i++)
+        {
+            input[i] = int.Parse(Console.ReadLine());
+        }
+
+        string[] output = new string[input.Length];
+        int outs = 0;
+        for (int i = 0; i < input.Length; i++)
+        {
+            output[i] = input[i].ToString();
+        }
+        outs = int.Parse((output[0] + output[1])); // 문자끼리 더한후 int로 변환후에 outs에 넣기
+        outs = outs - int.Parse(output[2]);
+
+        Console.WriteLine(input[0] + input[1] - input[2]);
+        Console.WriteLine(outs);
+    }
 }
 
