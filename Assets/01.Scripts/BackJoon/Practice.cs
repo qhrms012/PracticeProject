@@ -1256,5 +1256,11 @@ public class Practice : MonoBehaviour
             Console.WriteLine($"{output:F1}");
         }
     }
+
+    public void Practice15964()
+    {
+        var input = Console.ReadLine().Split().Select(long.Parse).ToArray();
+        Console.WriteLine((input[0] + input[1]) * (input[0] - input[1]));
+    }
 }
 
