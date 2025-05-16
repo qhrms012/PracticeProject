@@ -1303,7 +1303,7 @@ public class Practice : MonoBehaviour
 
         for (int i = 0; i < input; i++)
         {
-            string line = Console.ReadLine();  // OX 문자열 한 줄
+            string line = Console.ReadLine();
             int score = 0;
             int combo = 0;
 
@@ -1321,6 +1321,38 @@ public class Practice : MonoBehaviour
             }
 
             Console.WriteLine(score);
+        }
+    }
+
+    public void Practice10250()
+    {
+        int input = int.Parse(Console.ReadLine());
+        string[] results = new string[input];
+
+        for (int i = 0; i < input; i++)
+        {
+            int[] hwn = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            int H = hwn[0]; // 층수
+            int W = hwn[1];
+            int N = hwn[2]; // 몇 번째 손님
+
+            int floor = N % H;
+            int room = N / H + 1;
+
+            if (floor == 0)
+            {
+                floor = H;
+                room = N / H;
+            }
+
+            // 층과 호수를 조합하여 방 번호 생성
+            results[i] = $"{floor}{room.ToString("D2")}";
+        }
+
+        // 한 번에 출력
+        foreach (string result in results)
+        {
+            Console.WriteLine(result);
         }
     }
 }
