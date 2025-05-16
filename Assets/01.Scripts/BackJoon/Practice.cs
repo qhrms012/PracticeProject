@@ -1296,5 +1296,32 @@ public class Practice : MonoBehaviour
         Console.WriteLine(input[0] + input[1] - input[2]);
         Console.WriteLine(outs);
     }
+
+    public void Practice8958() 
+    {
+        int input = int.Parse(Console.ReadLine());
+
+        for (int i = 0; i < input; i++)
+        {
+            string line = Console.ReadLine();  // OX 문자열 한 줄
+            int score = 0;
+            int combo = 0;
+
+            foreach (char c in line)
+            {
+                if (c == 'O')
+                {
+                    combo++;
+                    score += combo;
+                }
+                else
+                {
+                    combo = 0;
+                }
+            }
+
+            Console.WriteLine(score);
+        }
+    }
 }
 
