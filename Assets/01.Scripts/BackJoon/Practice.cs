@@ -1355,5 +1355,27 @@ public class Practice : MonoBehaviour
             Console.WriteLine(result);
         }
     }
+
+    public void Practice2577()
+    {
+        int result = 1;
+        for (int i = 0; i < 3; i++)
+        {
+            int num = int.Parse(Console.ReadLine());
+            result *= num;
+        }
+
+        int[] counts = new int[10];
+        foreach (char c in result.ToString())
+        {
+            int digit = c - '0';
+            counts[digit]++;
+        }
+
+        foreach (int count in counts)
+        {
+            Console.WriteLine(count);
+        }
+    }
 }
 
