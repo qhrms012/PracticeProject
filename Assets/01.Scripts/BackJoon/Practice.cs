@@ -1377,5 +1377,31 @@ public class Practice : MonoBehaviour
             Console.WriteLine(count);
         }
     }
+
+    public void Practice2920()
+    {
+        int[] input = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+        bool isAscending = true;
+        bool isDescending = true;
+
+        for (int i = 0; i < input.Length - 1; i++)
+        {
+            if (input[i] < input[i + 1])
+            {
+                isDescending = false;
+            }
+            else if (input[i] > input[i + 1])
+            {
+                isAscending = false;
+            }
+        }
+
+        if (isAscending)
+            Console.WriteLine("ascending");
+        else if (isDescending)
+            Console.WriteLine("descending");
+        else
+            Console.WriteLine("mixed");
+    }
 }
 
