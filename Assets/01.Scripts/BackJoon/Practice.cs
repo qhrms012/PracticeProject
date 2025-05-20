@@ -1430,7 +1430,35 @@ public class Practice : MonoBehaviour
         }
     }
 
+    public void Practice1978()
+    {
+        int a = int.Parse(Console.ReadLine());
 
+        int[] input = new int[a];
+
+        input = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+
+        int output = 0;
+        for (int i = 0; i < input.Length; i++)
+        {
+            if (IsPrime(input[i]))
+                output++;
+        }
+
+
+        bool IsPrime(int num)
+        {
+            if (num < 2) return false;
+            for (int i = 2; i * i <= num; i++)
+            {
+                if (num % i == 0)
+                    return false;
+            }
+            return true;
+        }
+
+        Console.WriteLine(output);
+    }
 
 
 }
