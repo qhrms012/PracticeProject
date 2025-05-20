@@ -1403,5 +1403,35 @@ public class Practice : MonoBehaviour
         else
             Console.WriteLine("mixed");
     }
+    public void Practice4153()
+    {
+        while (true)
+        {
+            int[] input = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+
+            if (input[0] == 0 && input[1] == 0 && input[2] == 0)
+                break;
+
+            Array.Sort(input);
+
+            int a = input[0] * input[0];
+            int b = input[1] * input[1];
+            int c = input[2] * input[2];
+
+
+            if (a + b == c)
+            {
+                Console.WriteLine("right");
+            }
+            else if (a + b != c)
+            {
+                Console.WriteLine("wrong");
+            }
+        }
+    }
+
+
+
+
 }
 
