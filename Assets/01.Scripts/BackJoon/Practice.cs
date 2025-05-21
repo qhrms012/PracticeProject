@@ -1479,5 +1479,31 @@ public class Practice : MonoBehaviour
         Console.WriteLine(tshirtBundles);
         Console.WriteLine($"{penBundles} {penLeftover}");
     }
+
+    public void Practice2231()
+    {
+        int input = int.Parse(Console.ReadLine());
+        int result = 0;
+
+        for (int i = 1; i < input; i++)
+        {
+            int sum = i;
+            int temp = i;
+
+            while (temp != 0)
+            {
+                sum += temp % 10;
+                temp /= 10;
+            }
+
+            if (sum == input)
+            {
+                result = i;
+                break;
+            }
+        }
+
+        Console.WriteLine(result);
+    }
 }
 
