@@ -1460,6 +1460,24 @@ public class Practice : MonoBehaviour
         Console.WriteLine(output);
     }
 
+    public void Practice30802()
+    {
+        int a = int.Parse(Console.ReadLine());
+        int[] t = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+        int[] p = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
 
+        int tshirtBundles = 0;
+
+        for (int i = 0; i < t.Length; i++)
+        {
+            tshirtBundles += (t[i] + p[0] - 1) / p[0];
+        }
+
+        int penBundles = a / p[1];
+        int penLeftover = a % p[1];
+
+        Console.WriteLine(tshirtBundles);
+        Console.WriteLine($"{penBundles} {penLeftover}");
+    }
 }
 
