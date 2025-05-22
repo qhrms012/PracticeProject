@@ -1521,5 +1521,23 @@ public class Practice : MonoBehaviour
 
         Console.WriteLine(count);
     }
+
+    public void Practice2292Practice()
+    {
+        int input = int.Parse(Console.ReadLine());
+
+        int level = 1;
+
+        while (true)
+        {
+            int max = (2 * level - 1) * (2 * level - 1);
+            if (input <= max)
+            {
+                Console.WriteLine(level);
+                break;
+            }
+            level++;
+        }
+    }
 }
 
