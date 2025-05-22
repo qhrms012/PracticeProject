@@ -1505,5 +1505,21 @@ public class Practice : MonoBehaviour
 
         Console.WriteLine(result);
     }
+
+    public void Practice2292()
+    {
+        int n = int.Parse(Console.ReadLine());
+
+        int count = 1;
+        int range = 1;
+
+        while (range < n)
+        {
+            range += 6 * count;
+            count++;
+        }
+
+        Console.WriteLine(count);
+    }
 }
 
