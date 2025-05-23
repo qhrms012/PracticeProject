@@ -1608,5 +1608,16 @@ public class Practice : MonoBehaviour
         Console.WriteLine(max);
     }
 
+    public void Practice1259()
+    {
+        while (true)
+        {
+            string s = Console.ReadLine();
+            if (s == "0") break;
+            string r = new string(s.Reverse().ToArray());
+            Console.WriteLine(r == s ? "yes" : "no");
+        }
+    }
+
 }
 
