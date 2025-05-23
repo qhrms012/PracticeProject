@@ -1574,6 +1574,39 @@ public class Practice : MonoBehaviour
 
         Console.WriteLine(max);
     }
-}
+
+    public void Practice2798Practice()
+    {
+        string[] nm = Console.ReadLine().Split();
+        int n = int.Parse(nm[0]);
+        int m = int.Parse(nm[1]);
+
+        int[] cards = new int[n];
+
+        cards = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+
+        int max = 0;
+
+        for (int i = 0; i < n - 3; i++)
+        {
+            for (int j = i + 1; j < n - 2; j++)
+            {
+                for (int k = j + 1; k < n - 1; k++)
+                {
+                    for (int l = k + 1; l < n; l++)
+                    {
+                        int sum = cards[i] + cards[j] + cards[k] + cards[l];
+                        if (sum <= m && sum > max)
+                        {
+                            max = sum;
+                        }
+                    }
+                }
+            }
+        }
+
+        Console.WriteLine(max);
+    }
+
 }
 
