@@ -1619,5 +1619,25 @@ public class Practice : MonoBehaviour
         }
     }
 
+    public void Practice15829()
+    {
+        int n = int.Parse(Console.ReadLine());
+        string s = Console.ReadLine();
+
+        long result = 0;
+        long r = 31;
+        long mod = 1234567891;
+        long pow = 1;
+
+        for (int i = 0; i < s.Length; i++)
+        {
+            int value = s[i] - 'a' + 1;
+            result = (result + value * pow) % mod;
+            pow = (pow * r) % mod;  
+        }
+
+        Console.WriteLine(result);
+    }
+
 }
 
