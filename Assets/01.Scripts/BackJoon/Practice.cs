@@ -1666,5 +1666,38 @@ public class Practice : MonoBehaviour
         }
     }
 
+    public void Practice2609Practice()
+    {
+        static void Main(string[] args)
+        {
+            int[] input = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+            int a = input[0];
+            int b = input[1];
+            int c = input[2];
+
+            int gcd = GCD(GCD(a, b), c);
+
+            int lcm = LCM(LCM(a, b), c);
+
+            Console.WriteLine(gcd);
+            Console.WriteLine(lcm);
+        }
+
+        static int GCD(int a, int b)
+        {
+            while (b != 0)
+            {
+                int temp = b;
+                b = a % b;
+                a = temp;
+            }
+            return a;
+        }
+        static int LCM(int a, int b)
+        {
+            return a * b / GCD(a, b);
+        }
+    }
+
 }
 
