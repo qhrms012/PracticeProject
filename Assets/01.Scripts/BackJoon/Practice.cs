@@ -1731,5 +1731,34 @@ public class Practice : MonoBehaviour
         }
     }
 
+    public void Practice2775Practice()
+    {
+        int count = int.Parse(Console.ReadLine());
+
+        for (int i = 0; i < count; i++)
+        {
+            int[] input = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+
+            int k = input[0];
+            int n = input[1];
+            int[,] supply = new int[k + 1, n + 1];
+
+            for (int j = 1; j <= n; j++)
+            {
+                supply[0, j] = j;
+            }
+
+            for (int j = 1; j <= k; j++)
+            {
+                for (int p = 1; p <= n; p++)
+                {
+                    supply[j, p] = supply[j, p - 1] + supply[j - 1, p];
+                }
+            }
+
+            Console.WriteLine(supply[k, n]);
+        }
+    }
+
 }
 
