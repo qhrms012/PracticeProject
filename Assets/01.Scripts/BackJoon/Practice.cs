@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using Unity.VisualScripting;
@@ -1775,6 +1776,33 @@ public class Practice : MonoBehaviour
         }
 
         Console.WriteLine(days);
+    }
+
+    public void Practice10989()
+    {
+        StreamReader sr = new StreamReader(Console.OpenStandardInput());
+        StreamWriter sw = new StreamWriter(Console.OpenStandardOutput());
+        int n = int.Parse(sr.ReadLine());
+
+        int[] count = new int[10001];
+
+        for (int i = 0; i < n; i++)
+        {
+            int num = int.Parse(sr.ReadLine());
+            count[num]++;
+        }
+
+        for (int i = 1; i < count.Length; i++)
+        {
+            while (count[i]-- > 0)
+            {
+                sw.WriteLine(i);
+            }
+        }
+
+        sw.Flush();
+        sw.Close();
+        sr.Close();
     }
 
 }
