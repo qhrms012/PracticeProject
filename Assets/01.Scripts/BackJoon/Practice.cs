@@ -1760,5 +1760,22 @@ public class Practice : MonoBehaviour
         }
     }
 
+    public void Practice2869()
+    {
+        int[] input = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+
+        int a = input[0];
+        int b = input[1];
+        int c = input[2];
+
+        int days = (c - b) / (a - b);
+        if ((c - b) % (a - b) != 0)
+        {
+            days++;
+        }
+
+        Console.WriteLine(days);
+    }
+
 }
 
