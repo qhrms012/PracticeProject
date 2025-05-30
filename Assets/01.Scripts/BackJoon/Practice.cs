@@ -1832,5 +1832,50 @@ public class Practice : MonoBehaviour
         }
     }
 
+    public void Practice11050Practice()
+    {
+        const int MOD = 1000000007;
+
+        static void Main()
+        {
+            string[] input = Console.ReadLine().Split();
+            long n = long.Parse(input[0]);
+            long k = long.Parse(input[1]);
+
+            Console.WriteLine(BinomialCoefficient(n, k));
+        }
+
+        static long BinomialCoefficient(long n, long k)
+        {
+            long numerator = Factorial(n);
+            long denominator = (Factorial(k) * Factorial(n - k)) % MOD;
+            long inverse = Pow(denominator, MOD - 2);
+            return (numerator * inverse) % MOD;
+        }
+
+        static long Factorial(long num)
+        {
+            long result = 1;
+            for (int i = 2; i <= num; i++)
+            {
+                result = (result * i) % MOD;
+            }
+            return result;
+        }
+
+        static long Pow(long a, long b)
+        {
+            long result = 1;
+            a %= MOD;
+            while (b > 0)
+            {
+                if ((b & 1) == 1)
+                    result = (result * a) % MOD;
+                a = (a * a) % MOD;
+                b >>= 1;
+            }
+            return result;
+        }
+    }
 }
 
