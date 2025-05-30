@@ -1805,5 +1805,32 @@ public class Practice : MonoBehaviour
         sr.Close();
     }
 
+    public void Practice11050()
+    {
+        static void Main()
+        {
+            string[] input = Console.ReadLine().Split();
+            int n = int.Parse(input[0]);
+            int k = int.Parse(input[1]);
+
+            Console.WriteLine(BinomialCoefficient(n, k));
+        }
+
+        static int Factorial(int num)
+        {
+            int result = 1;
+            for (int i = 2; i <= num; i++)
+            {
+                result *= i;
+            }
+            return result;
+        }
+
+        static int BinomialCoefficient(int n, int k)
+        {
+            return Factorial(n) / (Factorial(k) * Factorial(n - k));
+        }
+    }
+
 }
 
