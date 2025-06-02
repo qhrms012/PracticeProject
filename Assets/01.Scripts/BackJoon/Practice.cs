@@ -1911,5 +1911,35 @@ public class Practice : MonoBehaviour
             return num.ToString();
         }
     }
+    public void Practice28702Practice()
+    {
+        string[] input = new string[4];
+        for (int i = 0; i < 4; i++)
+            input[i] = Console.ReadLine();
+
+        int start = 0;
+        int next = 0;
+        for (int i = 0; i < 4; i++)
+        {
+            if (int.TryParse(input[i], out start))
+            {
+                next = start - i;
+                break;
+            }
+        }
+
+        next += 4;
+
+        Console.WriteLine(GetFizzBuzzValue(next));
+    }
+
+    static string GetFizzBuzzValue(int num)
+    {
+        if (num % 15 == 0) return "FizzBuzz";
+        if (num % 3 == 0) return "Fizz";
+        if (num % 5 == 0) return "Buzz";
+        return num.ToString();
+    }
+}
 }
 
