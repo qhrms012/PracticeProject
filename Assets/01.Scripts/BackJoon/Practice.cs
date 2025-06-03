@@ -1940,6 +1940,28 @@ public class Practice : MonoBehaviour
         if (num % 5 == 0) return "Buzz";
         return num.ToString();
     }
+
+    public void Practice1181()
+    {
+        int n = int.Parse(Console.ReadLine());
+        string[] words = new string[n];
+
+        for (int i = 0; i < n; i++)
+        {
+            words[i] = Console.ReadLine();
+        }
+
+
+        var result = words
+            .Distinct()
+            .OrderBy(word => word.Length)
+            .ThenBy(word => word);
+
+        foreach (var word in result)
+        {
+            Console.WriteLine(word);
+        }
+    }
 }
-}
+
 
