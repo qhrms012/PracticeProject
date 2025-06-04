@@ -1962,6 +1962,27 @@ public class Practice : MonoBehaviour
             Console.WriteLine(word);
         }
     }
+
+    public void Practice1436()
+    {
+        int n = int.Parse(Console.ReadLine());
+        int count = 0;
+        int number = 666;
+
+        while (true)
+        {
+            if (number.ToString().Contains("666"))
+            {
+                count++;
+                if (count == n)
+                {
+                    Console.WriteLine(number);
+                    break;
+                }
+            }
+            number++;
+        }
+    }
 }
 
 
