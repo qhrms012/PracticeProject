@@ -1996,6 +1996,33 @@ public class Practice : MonoBehaviour
 
         Console.WriteLine(count);
     }
+
+    public void Practice2751()
+    {
+        StreamReader sr = new StreamReader(Console.OpenStandardInput());
+        StreamWriter sw = new StreamWriter(Console.OpenStandardOutput());
+
+        int n = int.Parse(sr.ReadLine());
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++)
+        {
+            arr[i] = int.Parse(sr.ReadLine());
+        }
+
+        Array.Sort(arr);
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < n; i++)
+        {
+            sb.AppendLine(arr[i].ToString());
+        }
+
+        sw.Write(sb);
+        sw.Flush();
+        sw.Close();
+        sr.Close();
+    }
 }
 
 
