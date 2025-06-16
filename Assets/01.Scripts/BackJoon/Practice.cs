@@ -868,8 +868,8 @@ public class Practice : MonoBehaviour
             Console.WriteLine(input);
         }
     }
-    
-        
+
+
     public void Practice3003()
     {
         string[] input = Console.ReadLine().Split();
@@ -1298,7 +1298,7 @@ public class Practice : MonoBehaviour
         Console.WriteLine(outs);
     }
 
-    public void Practice8958() 
+    public void Practice8958()
     {
         int input = int.Parse(Console.ReadLine());
 
@@ -1634,7 +1634,7 @@ public class Practice : MonoBehaviour
         {
             int value = s[i] - 'a' + 1;
             result = (result + value * pow) % mod;
-            pow = (pow * r) % mod;  
+            pow = (pow * r) % mod;
         }
 
         Console.WriteLine(result);
@@ -2022,6 +2022,35 @@ public class Practice : MonoBehaviour
         sw.Flush();
         sw.Close();
         sr.Close();
+    }
+
+    public void Practice14626()
+    {
+        string isbn = Console.ReadLine();
+        int starIndex = isbn.IndexOf('*');
+
+        for (int i = 0; i <= 9; i++)
+        {
+            string temp = isbn.Substring(0, starIndex) + i + isbn.Substring(starIndex + 1);
+            int sum = 0;
+
+            for (int j = 0; j < 12; j++)
+            {
+                int digit = temp[j] - '0';
+                if ((j + 1) % 2 == 1)
+                    sum += digit;
+                else
+                    sum += digit * 3;
+            }
+
+            int checkDigit = (10 - (sum % 10)) % 10;
+            if (checkDigit == temp[12] - '0')
+            {
+                Console.WriteLine(i);
+                break;
+            }
+
+        }
     }
 }
 
