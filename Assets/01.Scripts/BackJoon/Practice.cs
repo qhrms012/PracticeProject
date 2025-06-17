@@ -2052,6 +2052,36 @@ public class Practice : MonoBehaviour
 
         }
     }
+
+    public void Practice7568()
+    {
+        int count = int.Parse(Console.ReadLine());
+        List<(int weight, int height)> people = new List<(int, int)>();
+
+        for (int i = 0; i < count; i++)
+        {
+            int[] data = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+            people.Add((data[0], data[1]));
+        }
+
+        for (int i = 0; i < count; i++)
+        {
+            int rank = 1;
+
+            for (int j = 0; j < count; j++)
+            {
+                if (i == j) continue;
+
+
+                if (people[j].weight > people[i].weight && people[j].height > people[i].height)
+                {
+                    rank++;
+                }
+            }
+
+            Console.Write(rank + " ");
+        }
+    }
 }
 
 
