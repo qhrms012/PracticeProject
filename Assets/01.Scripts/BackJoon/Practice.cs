@@ -2082,6 +2082,22 @@ public class Practice : MonoBehaviour
             Console.Write(rank + " ");
         }
     }
+    public void Practice10814()
+    {
+        int count = int.Parse(Console.ReadLine());
+        List<(int age, string name, int index)> people = new List<(int, string, int)>();
+
+        for (int i = 0; i < count; i++)
+        {
+            string[] input = Console.ReadLine().Split();
+            people.Add((int.Parse(input[0]), input[1], i));
+        }
+
+        var sorted = people.OrderBy(p => p.age).ThenBy(p => p.index);
+
+        foreach (var p in sorted)
+            Console.WriteLine($"{p.age} {p.name}");
+    }
 }
 
 
