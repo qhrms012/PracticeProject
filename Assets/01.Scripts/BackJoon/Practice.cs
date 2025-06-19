@@ -2101,12 +2101,16 @@ public class Practice : MonoBehaviour
 
     public void Practice11650()
     {
-        int n = int.Parse(Console.ReadLine());
+        // 입력 최적화
+        StreamReader sr = new StreamReader(Console.OpenStandardInput());
+        StreamWriter sw = new StreamWriter(Console.OpenStandardOutput());
+        int n = int.Parse(sr.ReadLine());
+
         List<(int x, int y)> points = new List<(int x, int y)>();
 
         for (int i = 0; i < n; i++)
         {
-            string[] input = Console.ReadLine().Split();
+            string[] input = sr.ReadLine().Split();
             int x = int.Parse(input[0]);
             int y = int.Parse(input[1]);
             points.Add((x, y));
@@ -2116,14 +2120,20 @@ public class Practice : MonoBehaviour
         points.Sort((a, b) =>
         {
             if (a.x == b.x)
-                return a.y.CompareTo(b.y); 
-            return a.x.CompareTo(b.x);     
+                return a.y.CompareTo(b.y);
+            return a.x.CompareTo(b.x);
         });
 
+        // 출력 최적화
+        StringBuilder sb = new StringBuilder();
         foreach (var point in points)
         {
-            Console.WriteLine($"{point.x} {point.y}");
+            sb.AppendLine($"{point.x} {point.y}");
         }
+        sw.Write(sb);
+        sw.Flush(); 
+        sw.Close(); 
+        sr.Close();
     }
 }
 
