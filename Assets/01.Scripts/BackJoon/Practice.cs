@@ -2098,6 +2098,33 @@ public class Practice : MonoBehaviour
         foreach (var p in sorted)
             Console.WriteLine($"{p.age} {p.name}");
     }
+
+    public void Practice11650()
+    {
+        int n = int.Parse(Console.ReadLine());
+        List<(int x, int y)> points = new List<(int x, int y)>();
+
+        for (int i = 0; i < n; i++)
+        {
+            string[] input = Console.ReadLine().Split();
+            int x = int.Parse(input[0]);
+            int y = int.Parse(input[1]);
+            points.Add((x, y));
+        }
+
+        
+        points.Sort((a, b) =>
+        {
+            if (a.x == b.x)
+                return a.y.CompareTo(b.y); 
+            return a.x.CompareTo(b.x);     
+        });
+
+        foreach (var point in points)
+        {
+            Console.WriteLine($"{point.x} {point.y}");
+        }
+    }
 }
 
 
