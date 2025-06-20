@@ -2135,6 +2135,43 @@ public class Practice : MonoBehaviour
         sw.Close(); 
         sr.Close();
     }
+
+    public void Practice11651()
+    {
+        StreamReader sr = new StreamReader(Console.OpenStandardInput());
+        StreamWriter sw = new StreamWriter(Console.OpenStandardOutput());
+
+
+        int n = int.Parse(sr.ReadLine());
+        List<(int x, int y)> points = new List<(int x, int y)>();
+
+        for (int i = 0; i < n; i++)
+        {
+            string[] input = sr.ReadLine().Split();
+            int x = int.Parse(input[0]);
+            int y = int.Parse(input[1]);
+            points.Add((x, y));
+        }
+
+
+        points.Sort((a, b) =>
+        {
+            if (a.y == b.y)
+                return a.x.CompareTo(b.x);
+            return a.y.CompareTo(b.y); ;
+        });
+
+
+        StringBuilder sb = new StringBuilder();
+        foreach (var point in points)
+        {
+            sb.AppendLine($"{point.x} {point.y}");
+        }
+        sw.Write(sb);
+        sw.Flush();
+        sw.Close();
+        sr.Close();
+    }
 }
 
 
