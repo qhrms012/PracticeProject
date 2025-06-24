@@ -2172,6 +2172,58 @@ public class Practice : MonoBehaviour
         sw.Close();
         sr.Close();
     }
+
+    public void Practice1018()
+    {
+        var size = Console.ReadLine().Split();
+        int n = int.Parse(size[0]);
+        int m = int.Parse(size[1]);
+
+        char[,] board = new char[n, m];
+
+        for (int i = 0; i < n; i++)
+        {
+            string line = Console.ReadLine();
+            for (int j = 0; j < m; j++)
+            {
+                board[i, j] = line[j];
+            }
+        }
+
+        int min = 64; // 최대 64칸을 다시 칠할 수 있으므로
+
+        for (int i = 0; i <= n - 8; i++)
+        {
+            for (int j = 0; j <= m - 8; j++)
+            {
+                int repaint1 = 0; // 'W'로 시작하는 체스판
+                int repaint2 = 0; // 'B'로 시작하는 체스판
+
+                for (int x = 0; x < 8; x++)
+                {
+                    for (int y = 0; y < 8; y++)
+                    {
+                        char current = board[i + x, j + y];
+                        // x+y가 짝수일 땐 시작 색과 같아야 함
+                        if ((x + y) % 2 == 0)
+                        {
+                            if (current != 'W') repaint1++;
+                            if (current != 'B') repaint2++;
+                        }
+                        else
+                        {
+                            if (current != 'B') repaint1++;
+                            if (current != 'W') repaint2++;
+                        }
+                    }
+                }
+
+                min = Math.Min(min, Math.Min(repaint1, repaint2));
+            }
+        }
+
+        Console.WriteLine(min);
+    }
 }
 
 
