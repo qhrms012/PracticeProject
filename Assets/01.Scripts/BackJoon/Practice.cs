@@ -2236,10 +2236,14 @@ public class Practice : MonoBehaviour
 
             Array.Sort(a); // 이진 탐색을 위해 정렬
 
+            StringBuilder sb = new StringBuilder();
+
             foreach (int target in targets)
             {
-                Console.WriteLine(BinarySearch(a, target) ? 1 : 0);
+                sb.AppendLine(BinarySearch(a, target) ? "1" : "0");
             }
+
+            Console.Write(sb);
         }
 
         static bool BinarySearch(int[] arr, int target)
