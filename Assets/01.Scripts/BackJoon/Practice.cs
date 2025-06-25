@@ -2224,6 +2224,44 @@ public class Practice : MonoBehaviour
 
         Console.WriteLine(min);
     }
+
+    public void Practice1920()
+    {
+        static void Main()
+        {
+            int n = int.Parse(Console.ReadLine());
+            int[] a = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            int m = int.Parse(Console.ReadLine());
+            int[] targets = Console.ReadLine().Split().Select(int.Parse).ToArray();
+
+            Array.Sort(a); // 이진 탐색을 위해 정렬
+
+            foreach (int target in targets)
+            {
+                Console.WriteLine(BinarySearch(a, target) ? 1 : 0);
+            }
+        }
+
+        static bool BinarySearch(int[] arr, int target)
+        {
+            int left = 0;
+            int right = arr.Length - 1;
+
+            while (left <= right)
+            {
+                int mid = (left + right) / 2;
+
+                if (arr[mid] == target)
+                    return true;
+                else if (arr[mid] < target)
+                    left = mid + 1;
+                else
+                    right = mid - 1;
+            }
+
+            return false;
+        }
+    }
 }
 
 
