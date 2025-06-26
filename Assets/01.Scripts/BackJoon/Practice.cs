@@ -2266,6 +2266,29 @@ public class Practice : MonoBehaviour
             return false;
         }
     }
+
+    public void Practice2164()
+    {
+        int n = int.Parse(Console.ReadLine());
+        Queue<int> queue = new Queue<int>();
+
+        // 1부터 n까지 큐에 넣기
+        for (int i = 1; i <= n; i++)
+        {
+            queue.Enqueue(i);
+        }
+
+        // 카드가 한 장 남을 때까지 반복
+        while (queue.Count > 1)
+        {
+            queue.Dequeue(); // 제일 위 카드 버리기
+            int temp = queue.Dequeue(); // 다음 카드 꺼내서
+            queue.Enqueue(temp); // 다시 뒤로 넣기
+        }
+
+        // 마지막 남은 카드 출력
+        Console.WriteLine(queue.Peek());
+    }
 }
 
 
