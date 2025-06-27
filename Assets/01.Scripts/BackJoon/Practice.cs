@@ -2289,6 +2289,26 @@ public class Practice : MonoBehaviour
         // 마지막 남은 카드 출력
         Console.WriteLine(queue.Peek());
     }
+
+    public void Practice2839()
+    {
+        int n = int.Parse(Console.ReadLine());
+        int count = 0;
+
+        while (n >= 0)
+        {
+            if (n % 5 == 0)
+            {
+                count += n / 5;
+                Console.WriteLine(count);
+                return;
+            }
+            n -= 3;
+            count++;
+        }
+
+        Console.WriteLine(-1);  // 정확히 나눌 수 없는 경우
+    }
 }
 
 
