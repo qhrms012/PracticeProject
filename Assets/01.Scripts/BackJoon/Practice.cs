@@ -2309,6 +2309,51 @@ public class Practice : MonoBehaviour
 
         Console.WriteLine(-1);  // 정확히 나눌 수 없는 경우
     }
+
+    public void Practice4949()
+    {
+        while (true)
+        {
+            string line = Console.ReadLine();
+
+            if (line == ".")
+                break;
+
+            Stack<char> stack = new Stack<char>();
+            bool isBalanced = true;
+
+            foreach (char ch in line)
+            {
+                if (ch == '(' || ch == '[')
+                {
+                    stack.Push(ch);
+                }
+                else if (ch == ')')
+                {
+                    if (stack.Count == 0 || stack.Peek() != '(')
+                    {
+                        isBalanced = false;
+                        break;
+                    }
+                    stack.Pop();
+                }
+                else if (ch == ']')
+                {
+                    if (stack.Count == 0 || stack.Peek() != '[')
+                    {
+                        isBalanced = false;
+                        break;
+                    }
+                    stack.Pop();
+                }
+            }
+
+            if (stack.Count != 0)
+                isBalanced = false;
+
+            Console.WriteLine(isBalanced ? "yes" : "no");
+        }
+    }
 }
 
 
