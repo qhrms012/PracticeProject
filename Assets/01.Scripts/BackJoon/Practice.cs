@@ -2354,6 +2354,39 @@ public class Practice : MonoBehaviour
             Console.WriteLine(isBalanced ? "yes" : "no");
         }
     }
+
+    public void Practice9012()
+    {
+        int count = int.Parse(Console.ReadLine());
+
+        while (count-- > 0)
+        {
+            string line = Console.ReadLine();
+            Stack<char> stack = new Stack<char>();
+            bool isBalanced = true;
+
+            foreach (char ch in line)
+            {
+                if (ch == '(')
+                {
+                    stack.Push(ch);
+                }
+                else if (ch == ')')
+                {
+                    if (stack.Count == 0 || stack.Peek() != '(')
+                    {
+                        isBalanced = false;
+                        break;
+                    }
+                    stack.Pop();
+                }
+            }
+
+            if (stack.Count != 0)
+                isBalanced = false;
+
+            Console.WriteLine(isBalanced ? "YES" : "NO");
+        }
 }
 
 
