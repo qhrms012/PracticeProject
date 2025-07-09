@@ -2387,6 +2387,41 @@ public class Practice : MonoBehaviour
 
             Console.WriteLine(isBalanced ? "YES" : "NO");
         }
+    }
+
+    public void Practice10816()
+    {
+        int n = int.Parse(Console.ReadLine());
+        string[] nCards = Console.ReadLine().Split();
+
+
+        Dictionary<int, int> cardCounts = new Dictionary<int, int>();
+        foreach (var card in nCards)
+        {
+            int num = int.Parse(card);
+            if (cardCounts.ContainsKey(num))
+                cardCounts[num]++;
+            else
+                cardCounts[num] = 1;
+        }
+
+
+        int m = int.Parse(Console.ReadLine());
+        string[] mCards = Console.ReadLine().Split();
+
+
+        StringBuilder sb = new StringBuilder();
+        foreach (var card in mCards)
+        {
+            int num = int.Parse(card);
+            if (cardCounts.ContainsKey(num))
+                sb.Append(cardCounts[num] + " ");
+            else
+                sb.Append("0 ");
+        }
+
+        Console.WriteLine(sb.ToString().Trim());
+    }
 }
 
 
