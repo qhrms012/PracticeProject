@@ -2422,6 +2422,34 @@ public class Practice : MonoBehaviour
 
         Console.WriteLine(sb.ToString().Trim());
     }
+
+    public void Practice10773()
+    {
+        int count = int.Parse(Console.ReadLine());
+
+        Stack<int> stack = new Stack<int>();
+
+        for (int i = 0; i < count; i++)
+        {
+            int a = int.Parse(Console.ReadLine());
+
+            if (a == 0)
+            {
+                stack.Pop();
+            }
+            else
+            {
+                stack.Push(a);
+            }
+        }
+
+        int sum = 0;
+
+        foreach (int i in stack)
+            sum += i;
+
+        Console.WriteLine(sum);
+    }
 }
 
 
