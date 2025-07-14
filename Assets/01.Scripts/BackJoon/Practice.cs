@@ -2450,6 +2450,44 @@ public class Practice : MonoBehaviour
 
         Console.WriteLine(sum);
     }
+
+    public void Practice10828()
+    {
+
+        int count = int.Parse(Console.ReadLine());
+        Stack<int> stack = new Stack<int>();
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < count; i++)
+        {
+            string[] input = Console.ReadLine().Split();
+
+            switch (input[0])
+            {
+                case "push":
+                    stack.Push(int.Parse(input[1]));
+                    break;
+
+                case "pop":
+                    sb.AppendLine(stack.Count > 0 ? stack.Pop().ToString() : "-1");
+                    break;
+
+                case "size":
+                    sb.AppendLine(stack.Count.ToString());
+                    break;
+
+                case "empty":
+                    sb.AppendLine(stack.Count > 0 ? "0" : "1");
+                    break;
+
+                case "top":
+                    sb.AppendLine(stack.Count > 0 ? stack.Peek().ToString() : "-1");
+                    break;
+            }
+        }
+
+        Console.Write(sb.ToString());
+    }
 }
 
 
