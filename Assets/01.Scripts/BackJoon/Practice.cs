@@ -2488,6 +2488,63 @@ public class Practice : MonoBehaviour
 
         Console.Write(sb.ToString());
     }
+
+    public void Practice10845()
+    {
+        using System;
+        using System.Collections.Generic;
+        using System.Text;
+
+namespace backjoon
+{
+    internal class Program
+    {
+        static void Main()
+        {
+            int count = int.Parse(Console.ReadLine());
+            Queue<int> queue = new Queue<int>();
+            StringBuilder sb = new StringBuilder();
+            int last = -1;
+
+            for (int i = 0; i < count; i++)
+            {
+                string[] input = Console.ReadLine().Split();
+
+                switch (input[0])
+                {
+                    case "push":
+                        int num = int.Parse(input[1]);
+                        queue.Enqueue(num);
+                        last = num;
+                        break;
+
+                    case "pop":
+                        sb.AppendLine(queue.Count > 0 ? queue.Dequeue().ToString() : "-1");
+                        break;
+
+                    case "size":
+                        sb.AppendLine(queue.Count.ToString());
+                        break;
+
+                    case "empty":
+                        sb.AppendLine(queue.Count > 0 ? "0" : "1");
+                        break;
+
+                    case "front":
+                        sb.AppendLine(queue.Count > 0 ? queue.Peek().ToString() : "-1");
+                        break;
+
+                    case "back":
+                        sb.AppendLine(queue.Count > 0 ? last.ToString() : "-1");
+                        break;
+                }
+            }
+
+            Console.Write(sb.ToString());
+        }
+    }
 }
+    
+
 
 
