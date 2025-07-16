@@ -2116,7 +2116,7 @@ public class Practice : MonoBehaviour
             points.Add((x, y));
         }
 
-        
+
         points.Sort((a, b) =>
         {
             if (a.x == b.x)
@@ -2131,8 +2131,8 @@ public class Practice : MonoBehaviour
             sb.AppendLine($"{point.x} {point.y}");
         }
         sw.Write(sb);
-        sw.Flush(); 
-        sw.Close(); 
+        sw.Flush();
+        sw.Close();
         sr.Close();
     }
 
@@ -2491,57 +2491,79 @@ public class Practice : MonoBehaviour
 
     public void Practice10845()
     {
-        using System;
-        using System.Collections.Generic;
-        using System.Text;
+        int count = int.Parse(Console.ReadLine());
+        Queue<int> queue = new Queue<int>();
+        StringBuilder sb = new StringBuilder();
+        int last = -1;
 
-namespace backjoon
-{
-    internal class Program
-    {
-        static void Main()
+        for (int i = 0; i < count; i++)
         {
-            int count = int.Parse(Console.ReadLine());
-            Queue<int> queue = new Queue<int>();
-            StringBuilder sb = new StringBuilder();
-            int last = -1;
+            string[] input = Console.ReadLine().Split();
 
-            for (int i = 0; i < count; i++)
+            switch (input[0])
             {
-                string[] input = Console.ReadLine().Split();
+                case "push":
+                    int num = int.Parse(input[1]);
+                    queue.Enqueue(num);
+                    last = num;
+                    break;
 
-                switch (input[0])
-                {
-                    case "push":
-                        int num = int.Parse(input[1]);
-                        queue.Enqueue(num);
-                        last = num;
-                        break;
+                case "pop":
+                    sb.AppendLine(queue.Count > 0 ? queue.Dequeue().ToString() : "-1");
+                    break;
 
-                    case "pop":
-                        sb.AppendLine(queue.Count > 0 ? queue.Dequeue().ToString() : "-1");
-                        break;
+                case "size":
+                    sb.AppendLine(queue.Count.ToString());
+                    break;
 
-                    case "size":
-                        sb.AppendLine(queue.Count.ToString());
-                        break;
+                case "empty":
+                    sb.AppendLine(queue.Count > 0 ? "0" : "1");
+                    break;
 
-                    case "empty":
-                        sb.AppendLine(queue.Count > 0 ? "0" : "1");
-                        break;
+                case "front":
+                    sb.AppendLine(queue.Count > 0 ? queue.Peek().ToString() : "-1");
+                    break;
 
-                    case "front":
-                        sb.AppendLine(queue.Count > 0 ? queue.Peek().ToString() : "-1");
-                        break;
+                case "back":
+                    sb.AppendLine(queue.Count > 0 ? last.ToString() : "-1");
+                    break;
+            }
+        }
 
-                    case "back":
-                        sb.AppendLine(queue.Count > 0 ? last.ToString() : "-1");
-                        break;
-                }
+        Console.Write(sb.ToString());
+    }
+
+    public void Practice11866()
+    {
+        string[] input = Console.ReadLine().Split();
+        int n = int.Parse(input[0]);
+        int k = int.Parse(input[1]);
+
+        Queue<int> queue = new Queue<int>();
+        for (int i = 1; i <= n; i++)
+        {
+            queue.Enqueue(i);
+        }
+
+        StringBuilder sb = new StringBuilder();
+        sb.Append("<");
+
+        while (queue.Count > 0)
+        {
+            for (int i = 0; i < k - 1; i++)
+            {
+                queue.Enqueue(queue.Dequeue());
             }
 
-            Console.Write(sb.ToString());
+            sb.Append(queue.Dequeue());
+
+            if (queue.Count > 0)
+                sb.Append(", ");
         }
+
+        sb.Append(">");
+
+        Console.WriteLine(sb.ToString());
     }
 }
     
