@@ -2565,6 +2565,34 @@ public class Practice : MonoBehaviour
 
         Console.WriteLine(sb.ToString());
     }
+
+    public void Practice18110()
+    {
+        int input = int.Parse(Console.ReadLine());
+        int[] scores = new int[input];
+
+        for (int i = 0; i < input; i++)
+        {
+            scores[i] = int.Parse(Console.ReadLine());
+        }
+
+        Array.Sort(scores);
+
+        int cut = (int)Math.Round(input * 0.15, MidpointRounding.AwayFromZero);
+
+        int trimmedLength = input - 2 * cut;
+        if (trimmedLength <= 0)
+        {
+            Console.WriteLine(0);
+            return;
+        }
+
+        var trimmed = scores.Skip(cut).Take(trimmedLength);
+
+        double average = trimmed.Average();
+
+        Console.WriteLine((int)Math.Round(average, MidpointRounding.AwayFromZero));
+    }
 }
     
 
