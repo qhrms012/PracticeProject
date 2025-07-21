@@ -2629,6 +2629,57 @@ public class Practice : MonoBehaviour
             }
         }
     }
+
+    public void Practice1966()
+    {
+        int testCase = int.Parse(Console.ReadLine());
+
+        for (int t = 0; t < testCase; t++)
+        {
+            string[] input = Console.ReadLine().Split();
+            int docCount = int.Parse(input[0]);
+            int targetIndex = int.Parse(input[1]);
+
+            string[] priorities = Console.ReadLine().Split();
+            Queue<(int priority, int index)> queue = new Queue<(int, int)>();
+
+            for (int i = 0; i < docCount; i++)
+            {
+                queue.Enqueue((int.Parse(priorities[i]), i));
+            }
+
+            int printOrder = 0;
+
+            while (queue.Count > 0)
+            {
+                var current = queue.Dequeue();
+
+                bool hasHigher = false;
+                foreach (var item in queue)
+                {
+                    if (item.priority > current.priority)
+                    {
+                        hasHigher = true;
+                        break;
+                    }
+                }
+
+                if (hasHigher)
+                {
+                    queue.Enqueue(current);
+                }
+                else
+                {
+                    printOrder++;
+                    if (current.index == targetIndex)
+                    {
+                        Console.WriteLine(printOrder);
+                        break;
+                    }
+                }
+            }
+        }
+    }
 }
     
 
