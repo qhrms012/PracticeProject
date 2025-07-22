@@ -2680,6 +2680,49 @@ public class Practice : MonoBehaviour
             }
         }
     }
+
+    public void Practice1874()
+    {
+
+        int testCase = int.Parse(Console.ReadLine());
+
+        Stack<int> stack = new Stack<int>();
+        StringBuilder sb = new StringBuilder();
+        int num = 1;
+        bool isPossible = true;
+
+        for (int i = 0; i < testCase; i++)
+        {
+            int input = int.Parse(Console.ReadLine());
+
+            while (num <= input)
+            {
+                stack.Push(num);
+                sb.AppendLine("+");
+                num++;
+            }
+
+            if (stack.Peek() == input)
+            {
+                stack.Pop();
+                sb.AppendLine("-");
+            }
+            else
+            {
+                isPossible = false;
+                break;
+            }
+        }
+
+        if (isPossible)
+        {
+            Console.WriteLine(sb.ToString());
+        }
+        else
+        {
+            Console.WriteLine("NO");
+        }
+    }
 }
     
 
