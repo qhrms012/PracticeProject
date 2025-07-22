@@ -2723,6 +2723,51 @@ public class Practice : MonoBehaviour
             Console.WriteLine("NO");
         }
     }
+
+    public void Practice1874Queue()
+    {
+        int n = int.Parse(Console.ReadLine());
+        string[] input = Console.ReadLine().Split(' ');
+        Queue<int> queue = new Queue<int>();
+
+        for (int i = 1; i <= n; i++)
+        {
+            queue.Enqueue(i);
+        }
+
+        bool isPossible = true;
+
+        foreach (string s in input)
+        {
+            int target = int.Parse(s);
+            int tries = 0;
+
+            while (queue.Count > 0)
+            {
+                if (queue.Peek() == target)
+                {
+                    queue.Dequeue();
+                    break;
+                }
+                else
+                {
+                    queue.Enqueue(queue.Dequeue());
+                    tries++;
+                }
+
+                if (tries > queue.Count)
+                {
+                    isPossible = false;
+                    break;
+                }
+            }
+
+            if (!isPossible)
+                break;
+        }
+
+        Console.WriteLine(isPossible ? "YES" : "NO");
+    }
 }
     
 
