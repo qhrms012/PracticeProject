@@ -2768,6 +2768,42 @@ public class Practice : MonoBehaviour
 
         Console.WriteLine(isPossible ? "YES" : "NO");
     }
+
+    public void Practice2108()
+    {
+        int n = int.Parse(Console.ReadLine());
+        int[] nums = new int[n];
+
+        for (int i = 0; i < n; i++)
+            nums[i] = int.Parse(Console.ReadLine());
+
+        Array.Sort(nums);
+
+        // 1. »ê¼úÆò±Õ
+        double avg = nums.Average();
+        Console.WriteLine((int)Math.Round(avg, MidpointRounding.AwayFromZero));
+
+        // 2. Áß¾Ó°ª
+        Console.WriteLine(nums[n / 2]);
+
+        // 3. ÃÖºó°ª
+        Dictionary<int, int> freq = new Dictionary<int, int>();
+        foreach (int num in nums)
+        {
+            if (freq.ContainsKey(num)) freq[num]++;
+            else freq[num] = 1;
+        }
+
+        int maxFreq = freq.Values.Max();
+        List<int> modes = freq.Where(kv => kv.Value == maxFreq)
+                              .Select(kv => kv.Key)
+                              .ToList();
+        modes.Sort();
+        Console.WriteLine(modes.Count > 1 ? modes[1] : modes[0]);
+
+        // 4. ¹üÀ§
+        Console.WriteLine(nums[n - 1] - nums[0]);
+    }
 }
     
 
