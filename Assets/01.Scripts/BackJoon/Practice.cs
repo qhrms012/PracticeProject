@@ -2804,6 +2804,52 @@ public class Practice : MonoBehaviour
         // 4. ¹üÀ§
         Console.WriteLine(nums[n - 1] - nums[0]);
     }
+
+    public void Practice11723()
+    {
+        int m = int.Parse(Console.ReadLine());
+        HashSet<int> set = new HashSet<int>();
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < m; i++)
+        {
+            string[] input = Console.ReadLine().Split();
+            string command = input[0];
+
+            if (command == "add")
+            {
+                int x = int.Parse(input[1]);
+                set.Add(x);
+            }
+            else if (command == "remove")
+            {
+                int x = int.Parse(input[1]);
+                set.Remove(x);
+            }
+            else if (command == "check")
+            {
+                int x = int.Parse(input[1]);
+                sb.AppendLine(set.Contains(x) ? "1" : "0");
+            }
+            else if (command == "toggle")
+            {
+                int x = int.Parse(input[1]);
+                if (set.Contains(x)) set.Remove(x);
+                else set.Add(x);
+            }
+            else if (command == "all")
+            {
+                set.Clear();
+                for (int j = 1; j <= 20; j++) set.Add(j);
+            }
+            else if (command == "empty")
+            {
+                set.Clear();
+            }
+        }
+
+        Console.Write(sb.ToString());
+    }
 }
     
 
