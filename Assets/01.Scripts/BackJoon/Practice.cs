@@ -2850,6 +2850,36 @@ public class Practice : MonoBehaviour
 
         Console.Write(sb.ToString());
     }
+
+    public void Practice1620()
+    {
+        int[] input = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+        Dictionary<string, int> nameToNum = new Dictionary<string, int>();
+        Dictionary<int, string> numToName = new Dictionary<int, string>();
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 1; i <= input[0]; i++)
+        {
+            string name = Console.ReadLine();
+            nameToNum[name] = i;
+            numToName[i] = name;
+        }
+
+        for (int i = 0; i < input[1]; i++)
+        {
+            string nameOrNumber = Console.ReadLine();
+
+            if (int.TryParse(nameOrNumber, out int num))
+            {
+                sb.AppendLine(numToName[num]);
+            }
+            else
+            {
+                sb.AppendLine(nameToNum[nameOrNumber].ToString());
+            }
+        }
+        Console.Write(sb.ToString());
+    }
 }
     
 
