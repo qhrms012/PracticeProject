@@ -2880,6 +2880,41 @@ public class Practice : MonoBehaviour
         }
         Console.Write(sb.ToString());
     }
+
+    public void Practice1764()
+    {
+        string[] input = Console.ReadLine().Split();
+        int n = int.Parse(input[0]);
+        int m = int.Parse(input[1]);
+
+        HashSet<string> unheard = new HashSet<string>();
+        List<string> unheardAndUnseen = new List<string>();
+
+        // 듣도 못한 사람 저장
+        for (int i = 0; i < n; i++)
+        {
+            unheard.Add(Console.ReadLine());
+        }
+
+        // 보도 못한 사람 입력받으면서 교집합 확인
+        for (int i = 0; i < m; i++)
+        {
+            string name = Console.ReadLine();
+            if (unheard.Contains(name))
+            {
+                unheardAndUnseen.Add(name);
+            }
+        }
+
+        // 정렬 후 출력
+        unheardAndUnseen.Sort();
+
+        Console.WriteLine(unheardAndUnseen.Count);
+        foreach (var name in unheardAndUnseen)
+        {
+            Console.WriteLine(name);
+        }
+    }
 }
     
 
