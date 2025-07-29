@@ -2915,6 +2915,35 @@ public class Practice : MonoBehaviour
             Console.WriteLine(name);
         }
     }
+
+    public void Practice11047()
+    {
+        string[] input = Console.ReadLine().Split();
+        int n = int.Parse(input[0]);
+        int k = int.Parse(input[1]);
+
+        List<int> coins = new List<int>();
+        for (int i = 0; i < n; i++)
+        {
+            coins.Add(int.Parse(Console.ReadLine()));
+        }
+
+        coins.Sort((a, b) => b.CompareTo(a)); // 한 줄로 내림차순 정렬
+
+
+        int count = 0;
+
+        foreach (int coin in coins)
+        {
+            if (coin <= k)
+            {
+                count += k / coin;
+                k %= coin;
+            }
+        }
+
+        Console.WriteLine(count);
+    }
 }
     
 
