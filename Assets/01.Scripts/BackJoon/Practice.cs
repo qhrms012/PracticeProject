@@ -2944,6 +2944,25 @@ public class Practice : MonoBehaviour
 
         Console.WriteLine(count);
     }
+
+    public void Practice11399()
+    {
+        int inputCount = int.Parse(Console.ReadLine());
+        int[] times = Console.ReadLine().Split().Select(int.Parse).ToArray();
+
+        Array.Sort(times); // 오름차순 정렬
+
+        int total = 0;
+        int sum = 0;
+
+        for (int i = 0; i < inputCount; i++)
+        {
+            sum += times[i]; // 현재 사람까지의 누적 시간
+            total += sum;    // 총합에 더함
+        }
+
+        Console.WriteLine(total);
+    }
 }
     
 
