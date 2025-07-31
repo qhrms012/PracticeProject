@@ -2963,6 +2963,29 @@ public class Practice : MonoBehaviour
 
         Console.WriteLine(total);
     }
+
+    public void Practice17219()
+    {
+        string[] input = Console.ReadLine().Split();
+        int n = int.Parse(input[0]); // 저장할 주소 수
+        int m = int.Parse(input[1]); // 찾을 주소 수
+
+        Dictionary<string, string> map = new Dictionary<string, string>();
+
+        // N개의 주소-비밀번호 입력
+        for (int i = 0; i < n; i++)
+        {
+            string[] namePassword = Console.ReadLine().Split();
+            map[namePassword[0]] = namePassword[1];
+        }
+
+        // M개의 검색 주소에 대해 비밀번호 출력
+        for (int i = 0; i < m; i++)
+        {
+            string site = Console.ReadLine();
+            Console.WriteLine(map[site]);
+        }
+    }
 }
     
 
