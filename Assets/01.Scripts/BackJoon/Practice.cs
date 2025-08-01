@@ -2986,6 +2986,29 @@ public class Practice : MonoBehaviour
             Console.WriteLine(map[site]);
         }
     }
+
+    public void Practice1003()
+    {
+        int t = int.Parse(Console.ReadLine());
+        int[,] dp = new int[41, 2]; // 0~40까지, [i, 0]은 0의 호출 수, [i, 1]은 1의 호출 수
+
+        // 초기값
+        dp[0, 0] = 1; dp[0, 1] = 0; // fibonacci(0)은 0 한 번
+        dp[1, 0] = 0; dp[1, 1] = 1; // fibonacci(1)은 1 한 번
+
+        // DP로 피보나치 호출 횟수 저장
+        for (int i = 2; i <= 40; i++)
+        {
+            dp[i, 0] = dp[i - 1, 0] + dp[i - 2, 0];
+            dp[i, 1] = dp[i - 1, 1] + dp[i - 2, 1];
+        }
+
+        for (int i = 0; i < t; i++)
+        {
+            int n = int.Parse(Console.ReadLine());
+            Console.WriteLine($"{dp[n, 0]} {dp[n, 1]}");
+        }
+    }
 }
     
 
