@@ -3030,6 +3030,40 @@ public class Practice : MonoBehaviour
 
         Console.WriteLine(dp[n]);
     }
+
+    public void Practice2579()
+    {
+        int n = int.Parse(Console.ReadLine());
+        int[] stair = new int[n];
+        for (int i = 0; i < n; i++)
+        {
+            stair[i] = int.Parse(Console.ReadLine());
+        }
+
+        if (n == 1)
+        {
+            Console.WriteLine(stair[0]);
+            return;
+        }
+
+        if (n == 2)
+        {
+            Console.WriteLine(stair[0] + stair[1]);
+            return;
+        }
+
+        int[] dp = new int[n];
+        dp[0] = stair[0];
+        dp[1] = stair[0] + stair[1];
+        dp[2] = Math.Max(stair[0] + stair[2], stair[1] + stair[2]);
+
+        for (int i = 3; i < n; i++)
+        {
+            dp[i] = Math.Max(dp[i - 2] + stair[i], dp[i - 3] + stair[i - 1] + stair[i]);
+        }
+
+        Console.WriteLine(dp[n - 1]);
+    }
 }
     
 
