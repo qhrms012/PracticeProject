@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using UnityEngine;
 
 public class Practice : MonoBehaviour
 {
+   
     private void Start()
     {
 
@@ -3064,7 +3066,58 @@ public class Practice : MonoBehaviour
 
         Console.WriteLine(dp[n - 1]);
     }
-}
+
+    public void Practice2606()
+    {
+        //static List<int>[] graph;
+        //static bool[] visited;
+        //static int infectedCount = 0;
+
+        //static void Main()
+        //{
+        //    int n = int.Parse(Console.ReadLine()); // 컴퓨터 수
+        //    int m = int.Parse(Console.ReadLine()); // 연결된 쌍 수
+
+        //    graph = new List<int>[n + 1];
+        //    visited = new bool[n + 1];
+
+        //    for (int i = 0; i <= n; i++)
+        //    {
+        //        graph[i] = new List<int>();
+        //    }
+
+        //    for (int i = 0; i < m; i++)
+        //    {
+        //        string[] input = Console.ReadLine().Split();
+        //        int a = int.Parse(input[0]);
+        //        int b = int.Parse(input[1]);
+
+        //        graph[a].Add(b);
+        //        graph[b].Add(a);
+        //    }
+
+        //    DFS(1);
+
+        //    Console.WriteLine(infectedCount);
+        //}
+
+        //static void DFS(int node)
+        //{
+        //    visited[node] = true;
+
+        //    foreach (int neighbor in graph[node])
+        //    {
+        //        if (!visited[neighbor])
+        //        {
+        //            infectedCount++;
+        //            DFS(neighbor);
+        //        }
+        //    }
+        //}
+    }
+ }
+
+
     
 
 
