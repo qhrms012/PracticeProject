@@ -3115,6 +3115,29 @@ public class Practice : MonoBehaviour
         //    }
         //}
     }
+
+    public void Practice9095()
+    {
+        int t = int.Parse(Console.ReadLine()); // 테스트 케이스 개수
+
+        int[] dp = new int[12]; // n의 최대값이 11이므로 넉넉하게 12로 설정
+        dp[1] = 1;
+        dp[2] = 2;
+        dp[3] = 4;
+
+        // 미리 DP 배열 채워놓기
+        for (int i = 4; i <= 11; i++)
+        {
+            dp[i] = dp[i - 1] + dp[i - 2] + dp[i - 3];
+        }
+
+        // 테스트 케이스 실행
+        for (int i = 0; i < t; i++)
+        {
+            int n = int.Parse(Console.ReadLine());
+            Console.WriteLine(dp[n]);
+        }
+    }
  }
 
 
