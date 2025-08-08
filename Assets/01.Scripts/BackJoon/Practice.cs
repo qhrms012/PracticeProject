@@ -3138,6 +3138,43 @@ public class Practice : MonoBehaviour
             Console.WriteLine(dp[n]);
         }
     }
+
+    public void Practice9375()
+    {
+        int t = int.Parse(Console.ReadLine()); // 테스트 케이스 개수
+
+        for (int i = 0; i < t; i++)
+        {
+            int n = int.Parse(Console.ReadLine()); // 옷의 개수
+            Dictionary<string, int> clothes = new Dictionary<string, int>();
+
+            for (int j = 0; j < n; j++)
+            {
+                string[] input = Console.ReadLine().Split();
+                string name = input[0];
+                string type = input[1];
+
+                if (clothes.ContainsKey(type))
+                    clothes[type]++;
+                else
+                    clothes[type] = 1;
+            }
+
+            int result = 1;
+
+            foreach (var count in clothes.Values)
+            {
+                // 해당 종류를 안 입는 경우 + 입는 경우
+                result *= (count + 1);
+            }
+
+            // 아무것도 안 입는 경우 1개 빼기
+            result -= 1;
+
+            Console.WriteLine(result);
+
+        }
+    }
  }
 
 
