@@ -3175,6 +3175,32 @@ public class Practice : MonoBehaviour
 
         }
     }
+
+    public void Practice9461()
+    {
+        int t = int.Parse(Console.ReadLine());
+        long[] dp = new long[101]; // 최대 N이 100이라서 101칸
+
+        // 초기값 설정
+        dp[1] = 1;
+        dp[2] = 1;
+        dp[3] = 1;
+        dp[4] = 2;
+        dp[5] = 2;
+
+        // 점화식으로 채우기
+        for (int i = 6; i <= 100; i++)
+        {
+            dp[i] = dp[i - 1] + dp[i - 5];
+        }
+
+        // 테스트 케이스별 출력
+        for (int i = 0; i < t; i++)
+        {
+            int n = int.Parse(Console.ReadLine());
+            Console.WriteLine(dp[n]);
+        }
+    }
  }
 
 
