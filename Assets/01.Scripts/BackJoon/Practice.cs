@@ -3225,6 +3225,39 @@ public class Practice : MonoBehaviour
             Console.WriteLine(dp[n]);
         }
     }
+
+    public void Practice11659()
+    {
+        int[] nm = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+        int n = nm[0];
+        int m = nm[1];
+
+        // 숫자 배열
+        int[] numbers = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+
+        // 누적 합 배열 (1-based, 크기 n+1)
+        int[] prefixSum = new int[n + 1];
+        for (int i = 1; i <= n; i++)
+        {
+            prefixSum[i] = prefixSum[i - 1] + numbers[i - 1];
+        }
+
+        // 쿼리 처리
+        StringBuilder sb = new StringBuilder();
+        for (int q = 0; q < m; q++)
+        {
+            int[] range = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+            int start = range[0];
+            int end = range[1];
+
+            int ans = prefixSum[end] - prefixSum[start - 1];
+            sb.AppendLine(ans.ToString());
+        }
+
+        // 한 번에 출력
+        Console.Write(sb);
+    }
+
  }
 
 
