@@ -2,54 +2,60 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum PoolKey
+{
+    Bullet,
+    Enemy
+
+}
+
+
 public class ObjectPool : MonoBehaviour
 {
 
-    public GameObject[] prefabs;
-    public int poolSize = 10;
-
-    private Queue<GameObject> pool = new Queue<GameObject>();
-
-    // Start is called before the first frame update
-    void Start()
+    [System.Serializable]
+    public class Pool
     {
-        // 각 프리팹에 대해 poolSize만큼 생성
-        foreach (GameObject prefab in prefabs)
+        public PoolKey key;
+        public GameObject preFabs;
+    }
+
+    public Pool[] poolsConfig;
+
+    private Dictionary<PoolKey, List<GameObject>> poolDict;
+
+    private void Awake()
+    {
+        poolDict = new Dictionary<PoolKey, List<GameObject>>();
+
+        foreach (var pool in poolsConfig)
         {
-            for (int i = 0; i < poolSize; i++)
+            poolDict[pool.key] = new List<GameObject>();
+        }
+    }
+
+    public GameObject Get(PoolKey key)
+    {
+        var list = poolDict[key];
+        GameObject select = null;
+
+        foreach (GameObject item in list)
+        {
+            if (!item.activeSelf)
             {
-                GameObject obj = Instantiate(prefab);
-                obj.SetActive(false);
-                pool.Enqueue(obj);
+                select = item;
+                select.SetActive(true);
+                return select;
             }
         }
-        //for (int i = 0; i < poolSize; i++)
-        //{
-        //    // `prefabs` 배열에서 랜덤으로 프리팹 선택
-        //    GameObject prefabToUse = prefabs[i % prefabs.Length];           
-        //    GameObject obj = Instantiate(prefabToUse);
 
-        //    obj.SetActive(false);
-        //    pool.Enqueue(obj);
-        //}
+        var prefab = System.Array.Find(poolsConfig, p => p.key == key).preFabs;
+        select = Instantiate(prefab, transform);
+        list.Add(select);
 
-        GetFromPool();
+
+        return select;
     }
 
-    public GameObject GetFromPool()
-    {
-        if (pool.Count > 0)
-        {
-            GameObject obj = pool.Dequeue();
-            obj.SetActive(true);
-            return obj;
-        }
-        return null;
-    }
 
-    public void ReturnToPool(GameObject obj)
-    {
-        obj.SetActive(false);
-        pool.Enqueue(obj);
-    }
 }
