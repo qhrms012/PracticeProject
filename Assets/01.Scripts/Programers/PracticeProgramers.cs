@@ -60,4 +60,17 @@ public class PracticeProgramers : MonoBehaviour
         int c = a + b;
         Console.WriteLine($"{a} + {b} = {a + b}");
     }
+
+    public void Practice181946()
+    {
+        String[] input;
+
+        Console.Clear();
+        input = Console.ReadLine().Split(' ');
+
+        String s1 = input[0];
+        String s2 = input[1];
+
+        Console.Write($"{s1}{s2}");
+    }
 }
