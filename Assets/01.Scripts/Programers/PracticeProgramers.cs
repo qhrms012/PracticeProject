@@ -22,4 +22,24 @@ public class PracticeProgramers : MonoBehaviour
             Console.Write(s1);
         }
     }
+
+    public void Practice181949()
+    {
+        String s;
+
+        Console.Clear();
+        s = Console.ReadLine();
+
+        foreach (char c in s)
+        {
+            if (char.IsUpper(c))
+            {
+                Console.Write(char.ToLower(c));
+            }
+            else
+            {
+                Console.Write(char.ToUpper(c));
+            }
+        }
+    }
 }
