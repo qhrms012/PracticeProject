@@ -86,4 +86,23 @@ public class PracticeProgramers : MonoBehaviour
             Console.WriteLine(c);
         }
     }
+
+    public void Practice181944()
+    {
+        String[] s;
+
+        Console.Clear();
+        s = Console.ReadLine().Split(' ');
+
+        int a = Int32.Parse(s[0]);
+
+        if (a % 2 == 0)
+        {
+            Console.WriteLine($"{a} is even");
+        }
+        else
+        {
+            Console.WriteLine($"{a} is odd");
+        }
+    }
 }
