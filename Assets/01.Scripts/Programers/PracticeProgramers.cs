@@ -42,4 +42,9 @@ public class PracticeProgramers : MonoBehaviour
             }
         }
     }
+
+    public void Practice181948()
+    {
+        Console.Write("!@#$%^&*(\\'\"<>?:;");
+    }
 }
