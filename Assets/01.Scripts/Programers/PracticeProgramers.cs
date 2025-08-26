@@ -105,4 +105,15 @@ public class PracticeProgramers : MonoBehaviour
             Console.WriteLine($"{a} is odd");
         }
     }
+
+    public void Practice181943(string my_string, string overwrite_string, int s)
+    {
+        string answer = "";
+
+        string front = my_string.Substring(0, s);
+        string back = my_string.Substring(s + overwrite_string.Length);
+
+        answer = front + overwrite_string + back;
+        
+    }
 }
