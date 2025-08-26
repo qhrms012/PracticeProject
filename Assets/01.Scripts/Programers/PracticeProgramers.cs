@@ -47,4 +47,17 @@ public class PracticeProgramers : MonoBehaviour
     {
         Console.Write("!@#$%^&*(\\'\"<>?:;");
     }
+
+    public void Practice181947()
+    {
+        String[] s;
+
+        Console.Clear();
+        s = Console.ReadLine().Split(' ');
+
+        int a = Int32.Parse(s[0]);
+        int b = Int32.Parse(s[1]);
+        int c = a + b;
+        Console.WriteLine($"{a} + {b} = {a + b}");
+    }
 }
