@@ -73,4 +73,17 @@ public class PracticeProgramers : MonoBehaviour
 
         Console.Write($"{s1}{s2}");
     }
+
+    public void Practice181945()
+    {
+        String s;
+
+        Console.Clear();
+        s = Console.ReadLine();
+
+        foreach (char c in s)
+        {
+            Console.WriteLine(c);
+        }
+    }
 }
