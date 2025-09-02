@@ -116,4 +116,14 @@ public class PracticeProgramers : MonoBehaviour
         answer = front + overwrite_string + back;
         
     }
+
+    public void Practice181941(string[] arr)
+    {
+        string answer = "";
+
+        for (int i = 0; i < arr.Length; i++)
+            answer += arr[i];
+
+        
+    }
 }
