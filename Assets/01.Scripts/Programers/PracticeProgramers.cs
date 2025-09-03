@@ -126,4 +126,12 @@ public class PracticeProgramers : MonoBehaviour
 
         
     }
+
+    public void Practice181940(string my_string, int k)
+    {
+        string answer = "";
+
+        for (int i = 0; i < k; i++)
+            answer += my_string;        
+    }
 }
