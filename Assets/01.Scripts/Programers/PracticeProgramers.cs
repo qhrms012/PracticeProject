@@ -134,4 +134,25 @@ public class PracticeProgramers : MonoBehaviour
         for (int i = 0; i < k; i++)
             answer += my_string;        
     }
+
+    public void Practice181939(int a, int b)
+    {
+        int answer = 0;
+
+        string c = a.ToString() + b.ToString();
+        string d = b.ToString() + a.ToString();
+
+        int e = int.Parse(c);
+        int f = int.Parse(d);
+
+        if(e > f)
+        {
+            answer = e;
+        }
+        else
+        {
+            answer = f;
+        }
+
+    }
 }
