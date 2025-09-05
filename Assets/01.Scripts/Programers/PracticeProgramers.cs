@@ -155,4 +155,13 @@ public class PracticeProgramers : MonoBehaviour
         }
 
     }
+
+    public void Practice12931(int n)
+    {
+        int answer = 0;
+
+        foreach (char c in n.ToString())
+            answer += c - '0';
+
+    }
 }
