@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PracticeProgramers : MonoBehaviour
 {
@@ -162,6 +163,24 @@ public class PracticeProgramers : MonoBehaviour
 
         foreach (char c in n.ToString())
             answer += c - '0';
+
+    }
+
+    public void Practice12932(long n)
+    {
+        int len = n.ToString().Length;
+
+        int[] answer = new int[len];
+        int index = 0;
+
+        foreach (char c in n.ToString())
+        {
+            answer[index] = c - '0';
+            index++;
+        }
+
+        Array.Reverse(answer);
+
 
     }
 }
