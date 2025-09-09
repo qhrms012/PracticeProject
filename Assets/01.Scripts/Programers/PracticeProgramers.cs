@@ -183,4 +183,10 @@ public class PracticeProgramers : MonoBehaviour
 
 
     }
+
+
+    public void Practice12937(int num)
+    {
+       //return (num % 2 == 0) ? "Even" : "Odd";
+    }
 }
