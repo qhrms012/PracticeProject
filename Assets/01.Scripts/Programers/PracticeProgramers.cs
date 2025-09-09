@@ -189,4 +189,20 @@ public class PracticeProgramers : MonoBehaviour
     {
        //return (num % 2 == 0) ? "Even" : "Odd";
     }
+
+    public void Practice12944(int[] arr)
+    {
+        int count = arr.Length;
+        int sum = 0;
+
+        for (int i = 0; i < count; i++)
+        {
+            sum += arr[i];
+        }
+        
+
+        double output = (double)sum / count;
+        //Math.Round(output,2);
+
+    }
 }
