@@ -205,4 +205,13 @@ public class PracticeProgramers : MonoBehaviour
         //Math.Round(output,2);
 
     }
+
+    public void Practice12954(int x, int n)
+    {
+        long[] answer = new long[n];
+        for (int i = 0; i < n; i++)
+        {
+            answer[i] = (long)x * (i + 1);
+        }
+    }
 }
