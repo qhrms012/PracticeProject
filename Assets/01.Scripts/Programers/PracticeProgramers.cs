@@ -214,4 +214,17 @@ public class PracticeProgramers : MonoBehaviour
             answer[i] = (long)x * (i + 1);
         }
     }
+
+    public void Practice87389(int n)
+    {
+        int answer = 1;
+
+        while (answer < n)
+        {
+            if (n % answer == 1)
+                break;
+            answer++;
+        }
+
+    }
 }
