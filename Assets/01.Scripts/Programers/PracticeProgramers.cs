@@ -227,4 +227,11 @@ public class PracticeProgramers : MonoBehaviour
         }
 
     }
+
+    public void Practice12925(string s)
+    {
+        int answer = 0;
+
+        answer = int.Parse(s);
+    }
 }
