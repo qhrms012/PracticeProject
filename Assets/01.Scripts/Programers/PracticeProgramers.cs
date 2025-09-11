@@ -245,4 +245,13 @@ public class PracticeProgramers : MonoBehaviour
                 answer += i;
         }
     }
+
+    public void Practice12933(long n)
+    {
+        long answer = 0;
+        char[] a = n.ToString().ToCharArray();
+        Array.Sort(a);
+        Array.Reverse(a);
+        answer = long.Parse(a);
+    }
 }
