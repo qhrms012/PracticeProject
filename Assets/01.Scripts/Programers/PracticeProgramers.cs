@@ -254,4 +254,13 @@ public class PracticeProgramers : MonoBehaviour
         Array.Reverse(a);
         answer = long.Parse(a);
     }
+
+    public void Practice12912(int a, int b)
+    {
+        long answer = 0;
+        long min = Math.Min(a, b);
+        long max = Math.Max(a, b);
+        long count = max - min + 1;
+        answer = (max + min) * count / 2;
+    }
 }
