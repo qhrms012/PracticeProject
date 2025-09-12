@@ -263,4 +263,15 @@ public class PracticeProgramers : MonoBehaviour
         long count = max - min + 1;
         answer = (max + min) * count / 2;
     }
+
+
+    public void Practice12934(long n)
+    {
+        long r = (long)Math.Sqrt(n);
+        if (r * r == n) 
+        {
+            //return (r + 1) * (r + 1);
+        }
+        //return -1;
+    }
 }
