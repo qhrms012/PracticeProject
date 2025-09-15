@@ -274,4 +274,18 @@ public class PracticeProgramers : MonoBehaviour
         }
         //return -1;
     }
+
+    public void Pratice12947(int x)
+    {
+        bool answer = true;
+
+        int count = 0;
+
+        foreach (char c in x.ToString())
+            count += int.Parse(c.ToString());
+
+        answer = (x % count == 0) ? answer = true : answer = false;
+
+        //return answer;
+    }
 }
