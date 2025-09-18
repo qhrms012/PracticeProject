@@ -288,4 +288,23 @@ public class PracticeProgramers : MonoBehaviour
 
         //return answer;
     }
+
+    public void Practice76501(int[] absolutes, bool[] signs)
+    {
+        int answer = 0;
+
+        for (int i = 0; i < absolutes.Length; i++)
+        {
+            if (signs[i] == true)
+            {
+                answer += absolutes[i];
+            }
+            else
+            {
+                answer -= absolutes[i];
+            }
+        }
+
+        //return answer;
+    }
 }
