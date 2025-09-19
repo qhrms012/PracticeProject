@@ -307,4 +307,28 @@ public class PracticeProgramers : MonoBehaviour
 
         //return answer;
     }
+
+    public void Practice86051(int[] numbers)
+    {
+        bool[] exist = new bool[10];
+
+        foreach (int num in numbers)
+        {
+            exist[num] = true;
+        }
+
+        int answer = 0;
+
+        for (int i = 0; i < 10; i++)
+        {
+            if (!exist[i])
+            {
+                answer += i;
+            }
+        }
+
+
+
+        //return answer;
+    }
 }
