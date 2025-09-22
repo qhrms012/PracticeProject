@@ -350,4 +350,21 @@ public class PracticeProgramers : MonoBehaviour
         //return list.ToArray();
     }
 
+    public void Practice12919(string[] seoul)
+    {
+        string answer = "";
+        int count = 0;
+        foreach (string s in seoul)
+        {
+            if (s == "Kim")
+                break;
+            count++;
+        }
+
+        answer = $"김서방은 {count}에 있다";
+
+
+
+       // return answer;
+    }
 }
