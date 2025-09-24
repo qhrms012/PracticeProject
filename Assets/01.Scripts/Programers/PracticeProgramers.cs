@@ -386,4 +386,16 @@ public class PracticeProgramers : MonoBehaviour
 
        // return answer;
     }
+
+    public void Practice12948(string phone_number)
+    {
+        string answer = "";
+
+        int a = phone_number.Length;
+        string last4 = phone_number.Substring(a - 4);
+
+        answer = new string('*', a - 4) + last4;
+
+        //return answer;
+    }
 }
