@@ -398,4 +398,19 @@ public class PracticeProgramers : MonoBehaviour
 
         //return answer;
     }
+
+    public void Practice12903(string s)
+    {
+        string answer = "";
+        int a = s.Length;
+        if (a % 2 != 0)
+        {
+            answer = s.Substring(a / 2, 1);
+        }
+        else
+        {
+            answer = s.Substring((a - 2) / 2, 2);
+        }
+       // return answer;
+    }
 }
