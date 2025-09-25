@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -412,5 +413,26 @@ public class PracticeProgramers : MonoBehaviour
             answer = s.Substring((a - 2) / 2, 2);
         }
        // return answer;
+    }
+
+    public void Practice12935(int[] arr)
+    {
+        if (arr.Length == 1)
+        {
+
+        }
+           //return new int[] { -1 };
+
+        int min = arr.Min();
+        int[] answer = new int[arr.Length - 1];
+
+        int index = 0;
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (arr[i] == min) continue;
+            answer[index++] = arr[i];
+        }
+
+        //return answer;
     }
 }
