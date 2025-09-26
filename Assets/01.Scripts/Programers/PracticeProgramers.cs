@@ -449,4 +449,17 @@ public class PracticeProgramers : MonoBehaviour
         //return answer;
     }
 
+    public void Practice12922(int n)
+    {
+        string answer = "";
+        for (int i = 1; i <= n; i++)
+        {
+            if (i % 2 == 0)
+                answer += "¹Ú";
+            else
+                answer += "¼ö";
+        }
+
+        //return answer;
+    }
 }
