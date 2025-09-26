@@ -462,4 +462,21 @@ public class PracticeProgramers : MonoBehaviour
 
         //return answer;
     }
+
+    public void Practice77884(int left, int right)
+    {
+        int answer = 0;
+
+
+        for (int i = left; i <= right; i++)
+        {
+            int a = (int)Math.Sqrt(i);
+            if (a * a == i)
+                answer -= i;
+            else
+                answer += i;
+        }
+
+        //return answer;
+    }
 }
