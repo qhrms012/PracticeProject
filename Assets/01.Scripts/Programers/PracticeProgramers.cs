@@ -491,4 +491,12 @@ public class PracticeProgramers : MonoBehaviour
         answer = new string(chr);
         //return answer;
     }
+
+    public void Practice82612(int price, int money, int count)
+    {
+        long answer = 0;
+
+        long total = (long)price * count * (count + 1) / 2;
+        //return total > money ? total - money : 0;
+    }
 }
