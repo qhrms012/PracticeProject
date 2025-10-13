@@ -479,4 +479,16 @@ public class PracticeProgramers : MonoBehaviour
 
         //return answer;
     }
+
+    public void Practice12917(string s)
+    {
+        string answer = "";
+        char[] chr = s.ToArray();
+
+        Array.Sort(chr);
+        Array.Reverse(chr);
+
+        answer = new string(chr);
+        //return answer;
+    }
 }
