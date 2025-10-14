@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -498,5 +499,17 @@ public class PracticeProgramers : MonoBehaviour
 
         long total = (long)price * count * (count + 1) / 2;
         //return total > money ? total - money : 0;
+    }
+
+    public void Practice12918(string s)
+    {
+        bool answer = false;
+
+        if (s.Length == 4 || s.Length == 6)
+        {
+            answer = Regex.IsMatch(s, @"^\d+$");
+        }
+
+        //return answer;
     }
 }
