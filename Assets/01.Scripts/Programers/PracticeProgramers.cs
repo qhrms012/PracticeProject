@@ -530,4 +530,18 @@ public class PracticeProgramers : MonoBehaviour
 
        // return answer;
     }
+
+    public void Practice12969()
+    {
+        string[] input = Console.ReadLine().Split(' ');
+        int a = int.Parse(input[0]);
+        int b = int.Parse(input[1]);
+
+        string stars = new string('*', a);
+
+        for (int i = 0; i < b; i++)
+        {
+            Console.WriteLine(stars);
+        }
+    }
 }
