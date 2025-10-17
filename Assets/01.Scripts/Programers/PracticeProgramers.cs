@@ -544,4 +544,31 @@ public class PracticeProgramers : MonoBehaviour
             Console.WriteLine(stars);
         }
     }
+    public int[] Practice12940(int n, int m)
+    {
+
+        int[] answer = new int[2];
+        answer[0] = GetGCD(n, m);
+        answer[1] = GetLCM(n, m);
+
+
+
+        return answer;
+    }
+
+    static int GetGCD(int a, int b)
+    {
+        while (b != 0)
+        {
+            int temp = a % b;
+            a = b;
+            b = temp;
+        }
+        return a;
+
+    }
+    static int GetLCM(int a, int b)
+    {
+        return a * b / GetGCD(a, b);
+    }
 }
