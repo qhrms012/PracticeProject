@@ -571,4 +571,21 @@ public class PracticeProgramers : MonoBehaviour
     {
         return a * b / GetGCD(a, b);
     }
+
+    public void Practice147355(string s, string p)
+    {
+        int answer = 0;
+
+        for (int i = 0; i + p.Length <= t.Length; i++)
+        {
+            string sub = t.Substring(i, p.Length);
+
+            if (sub.Length == p.Length && long.Parse(sub) <= long.Parse(p))
+                answer++;
+        }
+
+
+        //return answer;
+    }
+
 }
