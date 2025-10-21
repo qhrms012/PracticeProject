@@ -588,4 +588,20 @@ public class PracticeProgramers : MonoBehaviour
         //return answer;
     }
 
+    public void Practice12982(int[] d, int budget)
+    {
+        int answer = 0;
+        Array.Sort(d);
+        int sum = 0;
+
+        foreach (int cost in d)
+        {
+            sum += cost;
+            if (sum > budget)
+                break;
+            answer++;
+        }
+       // return answer;
+    }
+
 }
