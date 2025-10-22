@@ -601,7 +601,29 @@ public class PracticeProgramers : MonoBehaviour
                 break;
             answer++;
         }
-       // return answer;
+        // return answer;
+
+    }
+    public void Practice68935(int n)
+    {
+        int answer = 0;
+        string reversed = "";
+
+        while (n > 0)
+        {
+            reversed += (n % 3).ToString();
+            n /= 3;
+        }
+
+        int power = 1;
+
+        for (int i = reversed.Length - 1; i >= 0; i--)
+        {
+            answer += (reversed[i] - '0') * power;
+            power *= 3;
+        }
+
+        //return answer;
     }
 
 }
