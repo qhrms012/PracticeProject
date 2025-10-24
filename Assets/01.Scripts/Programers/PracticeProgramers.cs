@@ -647,4 +647,29 @@ public class PracticeProgramers : MonoBehaviour
         //return answer;
     }
 
+    public void Practice12930(string s)
+    {
+        string answer = "";
+        string[] wordArray = s.Split(' ');
+
+        for (int i = 0; i < wordArray.Length; i++)
+        {
+            string word = wordArray[i];
+            string newWord = "";
+
+            for (int j = 0; j < word.Length; j++)
+            {
+                if (j % 2 == 0)
+                    newWord += char.ToUpper(word[j]);
+                else
+                    newWord += char.ToLower(word[j]);
+            }
+
+            wordArray[i] = newWord;
+        }
+
+        answer = string.Join(" ", wordArray);
+
+        //return answer;
+    }
 }
