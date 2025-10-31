@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -719,5 +720,28 @@ public class PracticeProgramers : MonoBehaviour
         }
 
         //return answer;
+    }
+
+    public void Practice12926(string s, int n)
+    {
+        StringBuilder sb = new StringBuilder();
+
+        foreach (char c in s)
+        {
+            if (char.IsLower(c))
+            {
+                sb.Append((char)('a' + (c - 'a' + n) % 26));
+            }
+            else if (char.IsUpper(c))
+            {
+                sb.Append((char)('A' + (c - 'A' + n) % 26));
+            }
+            else
+            {
+                sb.Append(c);
+            }
+        }
+
+        //return sb.ToString();
     }
 }
