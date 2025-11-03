@@ -744,4 +744,23 @@ public class PracticeProgramers : MonoBehaviour
 
         //return sb.ToString();
     }
+
+    public void Practice68644(int[] numbers)
+    {
+        List<int> list = new List<int>();
+
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            for (int j = i + 1; j < numbers.Length; j++)
+            {
+                int sum = numbers[i] + numbers[j];
+
+                if (!list.Contains(sum))
+                    list.Add(sum);
+            }
+        }
+
+        list.Sort();
+        //return list.ToArray();
+    }
 }
