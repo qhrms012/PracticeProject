@@ -763,4 +763,23 @@ public class PracticeProgramers : MonoBehaviour
         list.Sort();
         //return list.ToArray();
     }
+
+    public void Practice134240(int[] food)
+    {
+        string left = "";
+
+        for (int i = 1; i < food.Length; i++)
+        {
+            int count = food[i] / 2;
+            for (int j = 0; j < count; j++)
+            {
+                left += i;
+            }
+        }
+
+        string right = new string(left.Reverse().ToArray());
+        string answer = left + "0" + right;
+
+        //return answer;
+    }
 }
