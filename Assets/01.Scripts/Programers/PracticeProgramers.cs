@@ -782,4 +782,18 @@ public class PracticeProgramers : MonoBehaviour
 
         //return answer;
     }
+
+    public void Practice81301(string s)
+    {
+        int answer = 0;
+
+        string[] words = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+
+        for (int i = 0; i < words.Length; i++)
+        {
+            s = s.Replace(words[i], i.ToString());
+        }
+        answer = int.Parse(s);
+        //return answer;
+    }
 }
