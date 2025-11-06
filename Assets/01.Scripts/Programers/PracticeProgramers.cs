@@ -796,4 +796,24 @@ public class PracticeProgramers : MonoBehaviour
         answer = int.Parse(s);
         //return answer;
     }
+
+    public void Practice42748(int[] array, int[,] commands)
+    {
+        int[] answer = new int[commands.GetLength(0)];
+
+        for (int i = 0; i < commands.GetLength(0); i++)
+        {
+            int a = commands[i, 0];
+            int b = commands[i, 1];
+            int c = commands[i, 2];
+
+            var sliced = array.Skip(a - 1).Take(b - a + 1).ToArray();
+
+            Array.Sort(sliced);
+
+            answer[i] = sliced[c - 1];
+        }
+
+        //return answer;
+    }
 }
