@@ -816,4 +816,18 @@ public class PracticeProgramers : MonoBehaviour
 
         //return answer;
     }
+
+    public void Practice132267(int a, int b, int n)
+    {
+        int answer = 0;
+
+        while (n >= a)
+        {
+            int newCola = (n / a) * b;
+            answer += newCola;
+            n = newCola + (n % a);
+        }
+
+        //return answer;
+    }
 }
