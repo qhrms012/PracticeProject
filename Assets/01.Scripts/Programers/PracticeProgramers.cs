@@ -9,7 +9,7 @@ using UnityEngine.InputSystem;
 
 public class PracticeProgramers : MonoBehaviour
 {
-    
+
 
     public void PracticeSTR()
     {
@@ -118,7 +118,7 @@ public class PracticeProgramers : MonoBehaviour
         string back = my_string.Substring(s + overwrite_string.Length);
 
         answer = front + overwrite_string + back;
-        
+
     }
 
     public void Practice181941(string[] arr)
@@ -128,7 +128,7 @@ public class PracticeProgramers : MonoBehaviour
         for (int i = 0; i < arr.Length; i++)
             answer += arr[i];
 
-        
+
     }
 
     public void Practice181940(string my_string, int k)
@@ -136,7 +136,7 @@ public class PracticeProgramers : MonoBehaviour
         string answer = "";
 
         for (int i = 0; i < k; i++)
-            answer += my_string;        
+            answer += my_string;
     }
 
     public void Practice181939(int a, int b)
@@ -149,7 +149,7 @@ public class PracticeProgramers : MonoBehaviour
         int e = int.Parse(c);
         int f = int.Parse(d);
 
-        if(e > f)
+        if (e > f)
         {
             answer = e;
         }
@@ -190,7 +190,7 @@ public class PracticeProgramers : MonoBehaviour
 
     public void Practice12937(int num)
     {
-       //return (num % 2 == 0) ? "Even" : "Odd";
+        //return (num % 2 == 0) ? "Even" : "Odd";
     }
 
     public void Practice12944(int[] arr)
@@ -202,7 +202,7 @@ public class PracticeProgramers : MonoBehaviour
         {
             sum += arr[i];
         }
-        
+
 
         double output = (double)sum / count;
         //Math.Round(output,2);
@@ -271,7 +271,7 @@ public class PracticeProgramers : MonoBehaviour
     public void Practice12934(long n)
     {
         long r = (long)Math.Sqrt(n);
-        if (r * r == n) 
+        if (r * r == n)
         {
             //return (r + 1) * (r + 1);
         }
@@ -368,7 +368,7 @@ public class PracticeProgramers : MonoBehaviour
 
 
 
-       // return answer;
+        // return answer;
     }
 
     public void Practice12943(int num)
@@ -387,7 +387,7 @@ public class PracticeProgramers : MonoBehaviour
         if (answer >= 500)
             answer = -1;
 
-       // return answer;
+        // return answer;
     }
 
     public void Practice12948(string phone_number)
@@ -414,7 +414,7 @@ public class PracticeProgramers : MonoBehaviour
         {
             answer = s.Substring((a - 2) / 2, 2);
         }
-       // return answer;
+        // return answer;
     }
 
     public void Practice12935(int[] arr)
@@ -423,7 +423,7 @@ public class PracticeProgramers : MonoBehaviour
         {
 
         }
-           //return new int[] { -1 };
+        //return new int[] { -1 };
 
         int min = arr.Min();
         int[] answer = new int[arr.Length - 1];
@@ -529,7 +529,7 @@ public class PracticeProgramers : MonoBehaviour
             }
         }
 
-       // return answer;
+        // return answer;
     }
 
     public void Practice12969()
@@ -695,7 +695,7 @@ public class PracticeProgramers : MonoBehaviour
             if (h > maxHeight) maxHeight = h;
         }
 
-       // return maxWidth * maxHeight;
+        // return maxWidth * maxHeight;
     }
 
     public void Practice142086(string s)
@@ -829,5 +829,18 @@ public class PracticeProgramers : MonoBehaviour
         }
 
         //return answer;
+    }
+
+    public void Practice12915(string[] strings, int n)
+    {
+        Array.Sort(strings, (a, b) =>
+        {
+            if (a[n] == b[n])
+                return a.CompareTo(b);
+            else
+                return a[n].CompareTo(b[n]);
+        });
+
+        //return strings;
     }
 }
