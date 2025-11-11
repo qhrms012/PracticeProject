@@ -843,4 +843,24 @@ public class PracticeProgramers : MonoBehaviour
 
         //return strings;
     }
+
+    public void Practice138477(int k, int[] score)
+    {
+        List<int> list = new List<int>();
+        List<int> answer = new List<int>();
+
+        foreach (int s in score)
+        {
+            list.Add(s);
+            list.Sort();
+            list.Reverse();
+
+            if (list.Count < k)
+                answer.Add(list[list.Count - 1]);
+            else
+                answer.Add(list[k - 1]);
+        }
+
+        //return answer.ToArray();
+    }
 }
