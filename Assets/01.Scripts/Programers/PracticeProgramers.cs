@@ -863,4 +863,9 @@ public class PracticeProgramers : MonoBehaviour
 
         //return answer.ToArray();
     }
+
+    public void Practice120807(int num1, int num2)
+    {
+        //return num1 == num2 ? 1 : -1;
+    }
 }
