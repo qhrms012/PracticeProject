@@ -868,4 +868,13 @@ public class PracticeProgramers : MonoBehaviour
     {
         //return num1 == num2 ? 1 : -1;
     }
+
+    public void Practice120820(int age)
+    {
+        int answer = 2022 + 1;
+
+        answer -= age;
+
+        //return answer;
+    }
 }
