@@ -924,4 +924,14 @@ public class PracticeProgramers : MonoBehaviour
 
         //return answer;
     }
+
+    public void Practice120817(int[] numbers)
+    {
+        double answer = 0;
+
+        answer = numbers.Average();
+
+
+        //return answer;
+    }
 }
