@@ -907,4 +907,21 @@ public class PracticeProgramers : MonoBehaviour
 
         //return answer = (n * 12000) + (k * 2000) - ((n / 10) * 2000);
     }
+
+    public void Practice120831(int n)
+    {
+        int answer = 0;
+        int count = n / 2;
+        int a = 0;
+
+        for (int i = 0; i < count; i++)
+        {
+            a += 2;
+            answer += a;
+        }
+
+
+
+        //return answer;
+    }
 }
