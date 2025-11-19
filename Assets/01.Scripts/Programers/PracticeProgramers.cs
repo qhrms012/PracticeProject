@@ -942,4 +942,11 @@ public class PracticeProgramers : MonoBehaviour
 
         //return num_list;
     }
+
+    public void Practice120822(string my_string)
+    {
+        string answer = new string(my_string.Reverse().ToArray());
+
+        //return answer;
+    }
 }
