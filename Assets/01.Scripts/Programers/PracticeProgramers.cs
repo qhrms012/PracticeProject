@@ -934,4 +934,12 @@ public class PracticeProgramers : MonoBehaviour
 
         //return answer;
     }
+
+    public void Practice120821(int[] num_list)
+    {
+
+        Array.Reverse(num_list);
+
+        //return num_list;
+    }
 }
