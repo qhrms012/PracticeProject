@@ -958,4 +958,10 @@ public class PracticeProgramers : MonoBehaviour
 
         //return answer;
     }
+
+    public void Practice120814(int n)
+    {
+        //if (n % 7 == 0) //return n / 7;
+        //return n / 7 + 1;
+    }
 }
