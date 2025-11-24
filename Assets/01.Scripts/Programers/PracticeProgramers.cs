@@ -968,4 +968,12 @@ public class PracticeProgramers : MonoBehaviour
     {
         return n * (int)Math.Pow(2, t);
     }
+
+    public int Practice120847(int[] numbers)
+    {
+        Array.Sort(numbers);
+        int answer = numbers[numbers.Length - 2] * numbers[numbers.Length - 1];
+
+        return answer;
+    }
 }
