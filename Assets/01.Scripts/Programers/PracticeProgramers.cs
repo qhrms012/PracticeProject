@@ -976,4 +976,17 @@ public class PracticeProgramers : MonoBehaviour
 
         return answer;
     }
+
+    public int Practice120585(int[] array, int height)
+    {
+        int answer = 0;
+        foreach (int number in array)
+        {
+            if (number > height)
+            {
+                answer++;
+            }
+        }
+        return answer;
+    }
 }
