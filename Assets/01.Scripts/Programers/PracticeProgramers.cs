@@ -989,4 +989,12 @@ public class PracticeProgramers : MonoBehaviour
         }
         return answer;
     }
+
+    public int Practice120889(int[] sides)
+    {
+        int max = sides.Max();
+        int sum = sides.Sum() - max;
+
+        return sum > max ? 1 : 2;
+    }
 }
