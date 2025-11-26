@@ -1006,4 +1006,12 @@ public class PracticeProgramers : MonoBehaviour
 
         return answer;
     }
+
+    public int Practice120816(int slice, int n)
+    {
+        if (n % slice == 0)
+            return n / slice;
+
+        return n / slice + 1;
+    }
 }
