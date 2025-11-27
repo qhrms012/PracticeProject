@@ -1028,4 +1028,17 @@ public class PracticeProgramers : MonoBehaviour
 
         return answer;
     }
+
+    public int Practice120903(string[] s1, string[] s2)
+    {
+        int answer = 0;
+
+        foreach (string s in s2)
+        {
+            if (s1.Contains(s))
+                answer++;
+        }
+
+        return answer;
+    }
 }
