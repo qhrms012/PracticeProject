@@ -1041,4 +1041,9 @@ public class PracticeProgramers : MonoBehaviour
 
         return answer;
     }
+
+    public int Practice120836(int n)
+    {
+        return Enumerable.Range(1, n).Count(i => n % i == 0);
+    }
 }
