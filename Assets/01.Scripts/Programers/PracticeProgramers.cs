@@ -1046,4 +1046,17 @@ public class PracticeProgramers : MonoBehaviour
     {
         return Enumerable.Range(1, n).Count(i => n % i == 0);
     }
+
+    public int[] Practice120905(int n, int[] numlist)
+    {
+        List<int> answer = new List<int>();
+
+        foreach (int num in numlist)
+        {
+            if (num % n == 0)
+                answer.Add(num);
+        }
+
+        return answer.ToArray();
+    }
 }
