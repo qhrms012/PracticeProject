@@ -1059,4 +1059,17 @@ public class PracticeProgramers : MonoBehaviour
 
         return answer.ToArray();
     }
+
+    public int[] Practice120854(string[] strlist)
+    {
+        List<int> answer = new List<int>();
+
+        for (int i = 0; i < strlist.Length; i++)
+        {
+            answer.Add(strlist[i].Length);
+        }
+
+
+        return answer.ToArray();
+    }
 }
