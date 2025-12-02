@@ -1072,4 +1072,15 @@ public class PracticeProgramers : MonoBehaviour
 
         return answer.ToArray();
     }
+
+    public int[] Practice120819(int money)
+    {
+        List<int> answer = new List<int>();
+        int pay = 5500;
+        answer.Add(money / pay);
+        answer.Add(money % pay);
+
+
+        return answer.ToArray();
+    }
 }
