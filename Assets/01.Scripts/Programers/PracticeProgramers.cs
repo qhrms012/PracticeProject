@@ -1083,4 +1083,9 @@ public class PracticeProgramers : MonoBehaviour
 
         return answer.ToArray();
     }
+
+    public int Practice120908(string str1, string str2)
+    {
+        return str1.Contains(str2) ? 1 : 2;
+    }
 }
