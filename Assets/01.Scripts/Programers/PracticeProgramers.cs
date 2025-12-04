@@ -1102,4 +1102,12 @@ public class PracticeProgramers : MonoBehaviour
 
         return answer;
     }
+
+    public int Practice120909(int n)
+    {
+        int answer = 0;
+        answer = Math.Sqrt(n) % 1 == 0 ? 1 : 2;
+
+        return answer;
+    }
 }
