@@ -1088,4 +1088,18 @@ public class PracticeProgramers : MonoBehaviour
     {
         return str1.Contains(str2) ? 1 : 2;
     }
+
+    public string Practice120825(string my_string, int n)
+    {
+        string answer = "";
+
+        for (int i = 0; i < my_string.Length; i++)
+        {
+            for (int j = 0; j < n; j++)
+                answer += my_string[i];
+        }
+
+
+        return answer;
+    }
 }
