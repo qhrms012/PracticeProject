@@ -1110,4 +1110,17 @@ public class PracticeProgramers : MonoBehaviour
 
         return answer;
     }
+
+    public string Practice120826(string my_string, string letter)
+    {
+        string answer = "";
+        foreach (char c in my_string)
+        {
+            if (c.ToString() != letter)
+            {
+                answer += c;
+            }
+        }
+        return answer;
+    }
 }
