@@ -1123,4 +1123,17 @@ public class PracticeProgramers : MonoBehaviour
         }
         return answer;
     }
+
+    public string Practice120849(string my_string)
+    {
+        string answer = "";
+        string cut = "aeiou";
+
+        foreach (char c in my_string)
+        {
+            if (!cut.Contains(c))
+                answer += c;
+        }
+        return answer;
+    }
 }
