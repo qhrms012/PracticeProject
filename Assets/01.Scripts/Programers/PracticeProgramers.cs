@@ -1147,4 +1147,17 @@ public class PracticeProgramers : MonoBehaviour
         }
         return answer;
     }
+
+    public int Practice120906(int n)
+    {
+        int answer = 0;
+        string a = n.ToString();
+
+        foreach (var v in a)
+        {
+            answer += int.Parse(v.ToString());
+        }
+
+        return answer;
+    }
 }
