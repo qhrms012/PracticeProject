@@ -1171,4 +1171,9 @@ public class PracticeProgramers : MonoBehaviour
 
         return answer;
     }
+
+    public string Practice181907(string my_string, int n)
+    {
+        return my_string.Substring(0, n);
+    }
 }
