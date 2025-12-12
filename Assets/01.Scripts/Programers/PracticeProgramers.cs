@@ -1176,4 +1176,10 @@ public class PracticeProgramers : MonoBehaviour
     {
         return my_string.Substring(0, n);
     }
+
+    public string Practice181910(string my_string, int n)
+    {
+        int count = my_string.Length - n;
+        return my_string.Substring(count);
+    }
 }
