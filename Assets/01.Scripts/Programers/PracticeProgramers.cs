@@ -1197,4 +1197,10 @@ public class PracticeProgramers : MonoBehaviour
 
         return answer;
     }
+
+    public string Practice181877(string myString)
+    {
+        string answer = "";
+        return answer = myString.ToUpper();
+    }
 }
