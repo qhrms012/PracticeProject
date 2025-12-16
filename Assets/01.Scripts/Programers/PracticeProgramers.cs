@@ -1203,4 +1203,10 @@ public class PracticeProgramers : MonoBehaviour
         string answer = "";
         return answer = myString.ToUpper();
     }
+
+    public int Practice181937(int num, int n)
+    {
+        int answer = 0;
+        return answer = num % n == 0 ? 1 : 0;
+    }
 }
