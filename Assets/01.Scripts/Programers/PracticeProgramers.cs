@@ -1209,4 +1209,14 @@ public class PracticeProgramers : MonoBehaviour
         int answer = 0;
         return answer = num % n == 0 ? 1 : 0;
     }
+
+    public int Practice181936(int number, int n, int m)
+    {
+        int answer = 0;
+        if (number % n == 0 && number % m == 0)
+            answer = 1;
+        else
+            answer = 0;
+        return answer;
+    }
 }
