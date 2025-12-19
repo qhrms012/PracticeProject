@@ -1235,4 +1235,14 @@ public class PracticeProgramers : MonoBehaviour
 
         return int.Parse(even) + int.Parse(odd);
     }
+
+    public int[] Practice181889(int[] num_list, int n)
+    {
+        List<int> answer = new List<int>();
+        for (int i = 0; i < n; i++)
+            answer.Add(num_list[i]);
+
+
+        return answer.ToArray(); ;
+    }
 }
