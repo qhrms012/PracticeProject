@@ -1245,4 +1245,15 @@ public class PracticeProgramers : MonoBehaviour
 
         return answer.ToArray(); ;
     }
+
+    public int Practice120851(string my_string)
+    {
+        int answer = 0;
+        foreach (var s in my_string)
+        {
+            if (char.IsDigit(s))
+                answer += int.Parse(s.ToString());
+        }
+        return answer;
+    }
 }
