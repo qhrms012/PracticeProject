@@ -1256,4 +1256,13 @@ public class PracticeProgramers : MonoBehaviour
         }
         return answer;
     }
+
+    public int Practice120583(int[] array, int n)
+    {
+        int answer = 0;
+        foreach (int i in array)
+            if (i == n)
+                answer++;
+        return answer;
+    }
 }
