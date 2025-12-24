@@ -1273,4 +1273,13 @@ public class PracticeProgramers : MonoBehaviour
         answer = array[array.Length / 2];
         return answer;
     }
+
+    public int[] Practice120813(int n)
+    {
+        List<int> answer = new List<int>();
+        for (int i = 0; i <= n; i++)
+            if (i % 2 != 0)
+                answer.Add(i);
+        return answer.ToArray();
+    }
 }
