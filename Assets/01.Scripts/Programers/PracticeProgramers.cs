@@ -1265,4 +1265,12 @@ public class PracticeProgramers : MonoBehaviour
                 answer++;
         return answer;
     }
+
+    public int Practice120811(int[] array)
+    {
+        int answer = 0;
+        Array.Sort(array);
+        answer = array[array.Length / 2];
+        return answer;
+    }
 }
