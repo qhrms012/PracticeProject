@@ -1300,4 +1300,16 @@ public class PracticeProgramers : MonoBehaviour
         }
         return answer;
     }
+
+    public void Practice120823()
+    {
+        int s = int.Parse(Console.ReadLine());
+        string star = "*";
+        for (int i = 0; i < s; i++)
+        {
+            for (int j = 0; j <= i; j++)
+                Console.Write(star);
+            Console.WriteLine();
+        }
+    }
 }
