@@ -1312,4 +1312,18 @@ public class PracticeProgramers : MonoBehaviour
             Console.WriteLine();
         }
     }
+
+    public int Practice120837(int hp)
+    {
+        int answer = 0;
+        answer += hp / 5;
+        hp %= 5;
+
+        answer += hp / 3;
+        hp %= 3;
+
+        answer += hp;
+
+        return answer;
+    }
 }
