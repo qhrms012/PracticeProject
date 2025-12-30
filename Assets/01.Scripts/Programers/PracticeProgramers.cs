@@ -1326,4 +1326,25 @@ public class PracticeProgramers : MonoBehaviour
 
         return answer;
     }
+
+    public string Practice120839(string rsp)
+    {
+        string answer = "";
+        foreach (var c in rsp)
+        {
+            if (c == '2')
+            {
+                answer += "0";
+            }
+            else if (c == '0')
+            {
+                answer += "5";
+            }
+            else
+            {
+                answer += "2";
+            }
+        }
+        return answer;
+    }
 }
