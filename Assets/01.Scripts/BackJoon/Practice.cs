@@ -3278,6 +3278,17 @@ public class Practice : MonoBehaviour
         Console.WriteLine(dp[n]);
     }
 
+    public void Practice2965()
+    {
+        string[] input = Console.ReadLine().Split();
+        int A = int.Parse(input[0]);
+        int B = int.Parse(input[1]);
+        int C = int.Parse(input[2]);
+
+        int result = Math.Max(B - A, C - B) - 1;
+        Console.WriteLine(result);
+    }
+
  }
 
 
