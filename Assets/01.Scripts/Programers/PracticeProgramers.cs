@@ -1347,4 +1347,9 @@ public class PracticeProgramers : MonoBehaviour
         }
         return answer;
     }
+
+    public int Practice120845(int[] box, int n)
+    {
+        return (box[0] / n) * (box[1] / n) * (box[2] / n);
+    }
 }
