@@ -1352,4 +1352,17 @@ public class PracticeProgramers : MonoBehaviour
     {
         return (box[0] / n) * (box[1] / n) * (box[2] / n);
     }
+
+    public int[] Practice120850(string my_string)
+    {
+        List<int> answer = new List<int>();
+
+        foreach (var i in my_string)
+        {
+            if (int.TryParse(i.ToString(), out int num))
+                answer.Add(num);
+        }
+        answer.Sort();
+        return answer.ToArray();
+    }
 }
