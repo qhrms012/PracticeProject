@@ -1365,4 +1365,16 @@ public class PracticeProgramers : MonoBehaviour
         answer.Sort();
         return answer.ToArray();
     }
+
+    public int Practice120862(int[] numbers)
+    {
+        Array.Sort(numbers);
+
+        int n = numbers.Length;
+
+        int case1 = numbers[n - 1] * numbers[n - 2];
+        int case2 = numbers[0] * numbers[1];
+
+        return Math.Max(case1, case2);
+    }
 }
