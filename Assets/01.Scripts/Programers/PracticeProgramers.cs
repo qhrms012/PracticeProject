@@ -1377,4 +1377,19 @@ public class PracticeProgramers : MonoBehaviour
 
         return Math.Max(case1, case2);
     }
+
+    public string Practice120892(string cipher, int code)
+    {
+        string answer = "";
+        int count = 1;
+        foreach (char c in cipher)
+        {
+            if (count % code == 0)
+            {
+                answer += c;
+            }
+            count++;
+        }
+        return answer;
+    }
 }
