@@ -1392,4 +1392,16 @@ public class PracticeProgramers : MonoBehaviour
         }
         return answer;
     }
+
+    public string Practice120895(string my_string, int num1, int num2)
+    {
+        string answer = "";
+        char[] chr = my_string.ToCharArray();
+        char temp;
+        temp = chr[num1];
+        chr[num1] = chr[num2];
+        chr[num2] = temp;
+
+        return new string(chr);
+    }
 }
