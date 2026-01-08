@@ -1404,4 +1404,16 @@ public class PracticeProgramers : MonoBehaviour
 
         return new string(chr);
     }
+
+    public int[] Practice120897(int n)
+    {
+        List<int> answer = new List<int>();
+        for (int i = 1; i <= n; i++)
+        {
+            if (n % i == 0)
+                answer.Add(i);
+        }
+
+        return answer.ToArray();
+    }
 }
