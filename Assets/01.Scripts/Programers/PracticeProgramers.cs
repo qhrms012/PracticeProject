@@ -1416,4 +1416,17 @@ public class PracticeProgramers : MonoBehaviour
 
         return answer.ToArray();
     }
+
+    public int[] Practice120899(int[] array)
+    {
+        List<int> answer = new List<int>();
+
+        answer.Add(array.Max());
+
+        for (int i = 0; i < array.Length; i++)
+            if (array.Max() == array[i])
+                answer.Add(i);
+
+        return answer.ToArray();
+    }
 }
