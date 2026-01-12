@@ -1429,4 +1429,26 @@ public class PracticeProgramers : MonoBehaviour
 
         return answer.ToArray();
     }
+
+    public string Practice120911(string my_string)
+    {
+        string answer = "";
+        foreach (var s in my_string)
+        {
+            if (char.IsUpper(s))
+            {
+                answer += s.ToString().ToLower();
+            }
+            else
+            {
+                answer += s;
+            }
+
+        }
+        char[] arr = answer.ToCharArray();
+        Array.Sort(arr);
+        answer = new string(arr);
+
+        return answer;
+    }
 }
