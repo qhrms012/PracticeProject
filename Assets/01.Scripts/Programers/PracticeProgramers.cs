@@ -1451,4 +1451,15 @@ public class PracticeProgramers : MonoBehaviour
 
         return answer;
     }
+
+    public int Practice120904(int num, int k)
+    {
+        int answer = 0;
+        string s = num.ToString();
+        int index = s.IndexOf(k.ToString());
+
+        answer = index == -1 ? -1 : index + 1;
+
+        return answer;
+    }
 }
