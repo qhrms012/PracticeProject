@@ -1462,4 +1462,21 @@ public class PracticeProgramers : MonoBehaviour
 
         return answer;
     }
+
+    public string Practice120893(string my_string)
+    {
+        string answer = "";
+        foreach (char c in my_string)
+        {
+            if (char.IsUpper(c))
+            {
+                answer += c.ToString().ToLower();
+            }
+            else if (char.IsLower(c))
+            {
+                answer += c.ToString().ToUpper();
+            }
+        }
+        return answer;
+    }
 }
