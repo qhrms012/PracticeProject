@@ -1479,4 +1479,16 @@ public class PracticeProgramers : MonoBehaviour
         }
         return answer;
     }
+
+    public int Practice120815(int n)
+    {
+        int answer = 1;
+
+        while ((answer * 6) % n != 0)
+        {
+            answer++;
+        }
+
+        return answer;
+    }
 }
