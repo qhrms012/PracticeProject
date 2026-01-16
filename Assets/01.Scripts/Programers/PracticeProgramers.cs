@@ -1491,4 +1491,23 @@ public class PracticeProgramers : MonoBehaviour
 
         return answer;
     }
+
+    public string Practice120834(int age)
+    {
+        Dictionary<char, char> dict = new Dictionary<char, char>()
+        {
+            {'0','a'}, {'1','b'}, {'2','c'}, {'3','d'}, {'4','e'},
+            {'5','f'}, {'6','g'}, {'7','h'}, {'8','i'}, {'9','j'}
+        };
+
+        string strAge = age.ToString();
+        string answer = "";
+
+        foreach (char c in strAge)
+        {
+            answer += dict[c];
+        }
+
+        return answer;
+    }
 }
