@@ -1535,4 +1535,19 @@ public class PracticeProgramers : MonoBehaviour
 
         return answer;
     }
+
+    public int Practice120891(int order)
+    {
+        int answer = 0;
+
+        foreach (char c in order.ToString())
+        {
+            if (c == '3' || c == '6' || c == '9')
+            {
+                answer++;
+            }
+        }
+
+        return answer;
+    }
 }
