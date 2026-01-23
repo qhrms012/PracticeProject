@@ -1568,4 +1568,20 @@ public class PracticeProgramers : MonoBehaviour
 
         return answer;
     }
+
+    public string Practice120888(string my_string)
+    {
+        string answer = "";
+        HashSet<char> set = new HashSet<char>();
+
+        foreach (char c in my_string)
+        {
+            if (set.Add(c))
+            {
+                answer += c;
+            }
+        }
+
+        return answer;
+    }
 }
