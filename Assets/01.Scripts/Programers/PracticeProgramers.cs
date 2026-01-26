@@ -1584,4 +1584,23 @@ public class PracticeProgramers : MonoBehaviour
 
         return answer;
     }
+
+    public int[,] Practice120842(int[] num_list, int n)
+    {
+        int rows = num_list.Length / n;
+        int[,] answer = new int[rows, n];
+
+        int row = 0;
+
+        for (int i = 0; i < num_list.Length; i += n)
+        {
+            for (int col = 0; col < n; col++)
+            {
+                answer[row, col] = num_list[i + col];
+            }
+            row++;
+        }
+
+        return answer;
+    }
 }
