@@ -1603,4 +1603,28 @@ public class PracticeProgramers : MonoBehaviour
 
         return answer;
     }
+
+    public string Practice120838(string letter)
+    {
+        Dictionary<string, string> morse = new Dictionary<string, string>()
+        {
+            {".-", "a"},   {"-...", "b"}, {"-.-.", "c"}, {"-..", "d"},
+            {".", "e"},    {"..-.", "f"}, {"--.", "g"},  {"....", "h"},
+            {"..", "i"},   {".---", "j"}, {"-.-", "k"},  {".-..", "l"},
+            {"--", "m"},   {"-.", "n"},   {"---", "o"},  {".--.", "p"},
+            {"--.-", "q"}, {".-.", "r"},  {"...", "s"},  {"-", "t"},
+            {"..-", "u"},  {"...-", "v"}, {".--", "w"},  {"-..-", "x"},
+            {"-.--", "y"}, {"--..", "z"}
+        };
+
+        string answer = "";
+        string[] split = letter.Split(' ');
+
+        foreach (string s in split)
+        {
+            answer += morse[s];
+        }
+
+        return answer;
+    }
 }
